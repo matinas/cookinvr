@@ -8,8 +8,6 @@ public class Order : MonoBehaviour {
 	public delegate void OnOrderGrabbed();
 	public delegate void OnOrderDropped();
 
-	private bool orderInserted = false;
-
 	[HideInInspector]
 	public event OnOrderGrabbed onOrderGrabbed;
 	[HideInInspector]

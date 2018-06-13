@@ -54,7 +54,8 @@ public class OVController : MonoBehaviour {
 	
 	void HandleOrderInserted()
 	{
-		PowerOn();
+		if (!poweredOn)
+			PowerOn();
 	}
 
 	void PowerOn()
