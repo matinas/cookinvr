@@ -107,34 +107,25 @@ The project can be run directly from the Editor in case there are no errors with
 
 ## Plan / TODO
 
-•	~~Get a clear idea of the whole workflow for the game in paper (client arrives, place an order, took the order, check order, select ingredients, make food, etc). This will be the most important point I guess as all that will come later will depend on it.~~
-
-•	~~Share the idea with friends so to gather some opinions and early feedback on the abstract idea. Further improve the idea based on this feedback.~~
-
-•	~~Search for similar apps/projects so to check for more ideas. Play Job Simulator or any other VR game strongly based on interaction and take notes~~
-
-•	~~Make some simple prototypes of the workflow on paper. Simple storyboards or something~~
-
-•	~~Make some very simple isolated prototypes of the required interaction for all this to work (using just cubes and other native primitives initially). Basically grabbing objects and piling them together to make a sandwich, for example, prototype the way in which the recipe with the required ingredients will be shown, etc.~~
-
-•	~~Join all prototypes together to get a first version of the core gameplay of the game working.~~
-
-•	Test the prototype with real users.
-
-•	Once the basic interaction is in place and tested, replace the placeholder primitives with real models. The models will be done inside VR using Google Blocks, so one task will be modeling all the needed assets/ingredients, at least for a few simple receipts (e.g.: hamburger, sandwich and hot dog). Or eventually downloading them from Google Poly so to maintain the low poly graphical style. Put the assets into the game and check if all works fine with those.
-
-•	Complete the gameplay workflow upon this. Implement the scoring mechanism, rounds, timer so as soon as you receive the new order it starts ticking (set an appropriate time for each receipt), etc.
-
-•	Enhance graphics and interaction. Add audio and remaining stuff to get the final version.
+-	~~Get a clear idea of the whole workflow for the game in paper (client arrives, place an order, took the order, check order, select ingredients, make food, etc). This will be the most important point I guess as all that will come later will depend on it.~~
+-	~~Share the idea with friends so to gather some opinions and early feedback on the abstract idea. Further improve the idea based on this feedback.~~
+-	~~Search for similar apps/projects so to check for more ideas. Play Job Simulator or any other VR game strongly based on interaction and take notes~~
+-	~~Make some simple prototypes of the workflow on paper. Simple storyboards or something~~
+-	~~Make some very simple isolated prototypes of the required interaction for all this to work (using just cubes and other native primitives initially). Basically grabbing objects and piling them together to make a sandwich, for example, prototype the way in which the recipe with the required ingredients will be shown, etc.~~
+-	~~Join all prototypes together to get a first version of the core gameplay of the game working.~~
+-	Test the prototype with real users.
+-	Once the basic interaction is in place and tested, replace the placeholder primitives with real models. The models will be done inside VR using Google Blocks, so one task will be modeling all the needed assets/ingredients, at least for a few simple receipts (e.g.: hamburger, sandwich and hot dog). Or eventually downloading them from Google Poly so to maintain the low poly graphical style. Put the assets into the game and check if all works fine with those.
+-	Complete the gameplay workflow upon this. Implement the scoring mechanism, rounds, timer so as soon as you receive the new order it starts ticking (set an appropriate time for each receipt), etc.
+-	Enhance graphics and interaction. Add audio and remaining stuff to get the final version.
 
 ## Extra Features
 
-•	Add more complex manipulation of ingredients, not just placing them together to make the receipt. For example, cutting, boiling, etc.
-•	Add chores or other activities beyond cooking (washing dishes, defend against robberies, etc).
-•	Add a cool menu and some diegetic interfaces. For example, the menu could be attached to the users hand, watch or something).
-•	Add basic NPC clients walking around the saloon, maybe coming to place an order from time to time, waiting for it to be ready, etc.
-•	Add a slowed time mode. I would really like to experiment with this but don't know where in the game mechanics put it yet.
-•	Add multiple cooking areas each one with different ingredients and types of food. Implement teleportation to move between each cooking station (easy and motion-sickness free navigation approach).
-•	Port the game to mobile VR headsets or even standalone if all comes up well. Experimenting with Oculus Go support would be great.
-•	Add some reflective surfaces such as the oven's front face or a mirror somewhere, so the player can see himself reflected on it (or at least his head and hands moving in sync with his real movements) so to enhance the embodiment illusion.
-•	Add multiplayer support so players can compete somehow. For this I will have to take into account some social interaction techniques (how to represent the avatars in a socially expressive manner, how to interact with them, etc) as well as adding all the networking logic.
+-	Add more complex manipulation of ingredients, not just placing them together to make the receipt. For example, cutting, boiling, etc.
+-	Add chores or other activities beyond cooking (washing dishes, defend against robberies, etc).
+-	Add a cool menu and some diegetic interfaces. For example, the menu could be attached to the users hand, watch or something).
+-	Add basic NPC clients walking around the saloon, maybe coming to place an order from time to time, waiting for it to be ready, etc.
+-	Add a slowed time mode. I would really like to experiment with this but don't know where in the game mechanics put it yet.
+-	Add multiple cooking areas each one with different ingredients and types of food. Implement teleportation to move between each cooking station (easy and motion-sickness free navigation approach).
+-	Port the game to mobile VR headsets or even standalone if all comes up well. Experimenting with Oculus Go support would be great.
+-	Add some reflective surfaces such as the oven's front face or a mirror somewhere, so the player can see himself reflected on it (or at least his head and hands moving in sync with his real movements) so to enhance the embodiment illusion.
+-	Add multiplayer support so players can compete somehow. For this I will have to take into account some social interaction techniques (how to represent the avatars in a socially expressive manner, how to interact with them, etc) as well as adding all the networking logic.
