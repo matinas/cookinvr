@@ -22,10 +22,15 @@ I think this is a more simplistic scenario than the one I have initially thought
 Surprisingly, I have found a bunch of cooking/food serving VR games on the Steam Store based on a similar idea, some of which are listed below. I've checked them all and took some notes about a few possible features and improvements to add to my own.
 
 [Job Simulator](https://store.steampowered.com/app/448280/Job_Simulator/)
+
 [VR The Diner Duo](https://store.steampowered.com/app/530120/VR_The_Diner_Duo/)
+
 [The Cooking VR Game](https://store.steampowered.com/app/857180/The_Cooking_Game_VR/)
+
 [Counter Fight](https://store.steampowered.com/app/551690/Counter_Fight/)
+
 [Dead Hungry](https://store.steampowered.com/app/538710/Dead_Hungry/)
+
 [Taphouse VR](https://store.steampowered.com/app/591680/Taphouse_VR/)
 
 ## Storyboarding
@@ -80,6 +85,7 @@ Despite using the SteamVR Interaction System, I had to implement a few interesti
 Check the following videos to get a little idea of how this initial prototypes evolved:
 
 https://www.youtube.com/watch?v=V5V5sP47X5c
+
 https://www.youtube.com/watch?v=utdpCmk1VuE
 
 **Final prototype version:** https://www.youtube.com/watch?v=kjMlH1FRab0
@@ -102,14 +108,23 @@ The project can be run directly from the Editor in case there are no errors with
 ## Plan / TODO
 
 •	~~Get a clear idea of the whole workflow for the game in paper (client arrives, place an order, took the order, check order, select ingredients, make food, etc). This will be the most important point I guess as all that will come later will depend on it.~~
+
 •	~~Share the idea with friends so to gather some opinions and early feedback on the abstract idea. Further improve the idea based on this feedback.~~
+
 •	~~Search for similar apps/projects so to check for more ideas. Play Job Simulator or any other VR game strongly based on interaction and take notes~~
+
 •	~~Make some simple prototypes of the workflow on paper. Simple storyboards or something~~
+
 •	~~Make some very simple isolated prototypes of the required interaction for all this to work (using just cubes and other native primitives initially). Basically grabbing objects and piling them together to make a sandwich, for example, prototype the way in which the recipe with the required ingredients will be shown, etc.~~
+
 •	~~Join all prototypes together to get a first version of the core gameplay of the game working.~~
+
 •	Test the prototype with real users.
+
 •	Once the basic interaction is in place and tested, replace the placeholder primitives with real models. The models will be done inside VR using Google Blocks, so one task will be modeling all the needed assets/ingredients, at least for a few simple receipts (e.g.: hamburger, sandwich and hot dog). Or eventually downloading them from Google Poly so to maintain the low poly graphical style. Put the assets into the game and check if all works fine with those.
-•	Complete the gameplay workflow upon this. Implement the scoring mechanism, rounds, timer so as soon as you receive the new order it starts ticking (set an appropriate time for each receipt), etc..
+
+•	Complete the gameplay workflow upon this. Implement the scoring mechanism, rounds, timer so as soon as you receive the new order it starts ticking (set an appropriate time for each receipt), etc.
+
 •	Enhance graphics and interaction. Add audio and remaining stuff to get the final version.
 
 ## Extra Features
