@@ -21,6 +21,11 @@ public class OrderSlot : MonoBehaviour {
 	[HideInInspector]
 	public event OnOrderRemoved onOrderRemoved;
 
+	void Awake()
+	{
+		GetComponentInParent<OMController>().onOMDispatchSuccess += RemoveOrder;
+	}
+
 	void HandleOrderDrop()
 	{
 		o.transform.position = gameObject.transform.position;
@@ -55,5 +60,11 @@ public class OrderSlot : MonoBehaviour {
 				o = null;
 			}
 		}
+	}
+
+	void RemoveOrder()
+	{
+		GameObject.Destroy(o.gameObject);
+		isBeingUsed = false;
 	}
 }

@@ -10,11 +10,14 @@ public class RecipeController : MonoBehaviour {
 
 	public Transform recipePrefab;
 
+	public Transform particlesPrefab;
+	public Transform spawnPoint;
+
 	public Transform recipe;
 
-	public OVController OVController;
+	public OMController OMController;
 
-	public bool isCompleted { get ; private set; }
+	public static bool isCompleted { get ; private set; }
 
 	private Transform currPlaceholder;
 	private int currPHIndex;
@@ -23,8 +26,9 @@ public class RecipeController : MonoBehaviour {
 
 	void Awake()
 	{
-		OVController.onOVPowerOn += StartRecipe;
-		OVController.onOVPowerOff += ResetRecipe;
+		OMController.onOMPowerOn += StartRecipe;
+		OMController.onOMPowerOff += ResetRecipe;
+		OMController.onOMDispatchSuccess += ResetRecipeAndSuccess;
 
 		currPHIndex = 0;
 		isCompleted = false;
@@ -37,9 +41,6 @@ public class RecipeController : MonoBehaviour {
 		obj.transform.position = currPlaceholder.position;
 		obj.transform.rotation = currPlaceholder.rotation;
 		obj.transform.parent = recipe.transform;
-
-		//Destroy(obj.GetComponent<Throwable>());
-		//Destroy(obj.GetComponent<Rigidbody>());
 
 		CleanCurrentPlaceholder();
 		currPHIndex++;
@@ -68,7 +69,7 @@ public class RecipeController : MonoBehaviour {
 		SetupNextPlaceholder();
 	}
 
-	void ResetRecipe()
+	void Reset()
 	{
 		currPHIndex = 0;
 		GameObject.Destroy(refRecipe.gameObject);
@@ -78,6 +79,20 @@ public class RecipeController : MonoBehaviour {
 
 		refRecipe = null;
 		currPlaceholder = null;
+		isCompleted = false;
+	}
+
+	void ResetRecipe()
+	{
+		Reset();
+	}
+
+	void ResetRecipeAndSuccess()
+	{
+		Reset();
+
+		var particles = GameObject.Instantiate(particlesPrefab, spawnPoint.position, spawnPoint.rotation);
+		Destroy(particles.gameObject,2.0f);
 	}
 
 	void CleanCurrentPlaceholder()
