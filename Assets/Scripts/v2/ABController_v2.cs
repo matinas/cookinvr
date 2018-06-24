@@ -32,6 +32,13 @@ public class ABController_v2 : MonoBehaviour {
 		currentIngredients = new List<string>();
 	}
 
+	void Destroy()
+	{
+		OMController_v2.onOMPowerOn -= InitAssembly;
+		OMController_v2.onOMPowerOff -= InitAssembly;
+		OMController_v2.onOMDispatch -= DispatchRecipe;
+	}
+
 	void InitAssembly(Recipe_v2 r)
 	{
 		currentIngredient = null;
@@ -42,8 +49,12 @@ public class ABController_v2 : MonoBehaviour {
 		var particles = GameObject.Instantiate(particlesPrefab, spawnPoint.position, spawnPoint.rotation);
 		Destroy(particles.gameObject,2.0f);
 
+		currentIngredients.Clear();
+
 		for (int c=0; c<currentRecipe.childCount; c++)
 			GameObject.Destroy(currentRecipe.GetChild(c).gameObject);
+
+		DebugIngredients = currentIngredients;
 	}
 
 	void HandleIngredientPlaced(Hand h)
@@ -51,7 +62,7 @@ public class ABController_v2 : MonoBehaviour {
 		Debug.Log("Ingredient placed!");
 
 		currentIngredients.Add(currentIngredient.name);
-		currentIngredient.gameObject.transform.parent = currentRecipe;
+		currentIngredient.transform.parent = currentRecipe;
 
 		DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
 	}
@@ -61,7 +72,7 @@ public class ABController_v2 : MonoBehaviour {
 		Debug.Log("Ingredient removed!");
 
 		currentIngredients.Remove(currentIngredient.name);
-		currentIngredient.gameObject.transform.parent = null;
+		//currentIngredient.transform.parent = null;
 
 		DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
 	}

@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33302853809509746}
   - component: {fileID: 65600679886164480}
   - component: {fileID: 23696512710847266}
-  - component: {fileID: 114780969535167528}
   m_Layer: 0
   m_Name: Cheese
   m_TagString: Untagged
@@ -58,7 +57,6 @@ GameObject:
   - component: {fileID: 33514979169149974}
   - component: {fileID: 65559408741005250}
   - component: {fileID: 23553149178654254}
-  - component: {fileID: 114479994585966480}
   m_Layer: 0
   m_Name: Tomatoe
   m_TagString: Untagged
@@ -77,7 +75,6 @@ GameObject:
   - component: {fileID: 33452303414307396}
   - component: {fileID: 65660311364057448}
   - component: {fileID: 23105411650071526}
-  - component: {fileID: 114161296900711858}
   m_Layer: 0
   m_Name: Beef
   m_TagString: Untagged
@@ -126,7 +123,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4889651717423876}
   - component: {fileID: 65004179210718326}
-  - component: {fileID: 114923309602564852}
   m_Layer: 0
   m_Name: Bottom Bun
   m_TagString: Untagged
@@ -517,56 +513,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000004, y: 1.8721118, z: 1.0000004}
   m_Center: {x: 0.000000067666726, y: 0.06394374, z: -0.00000010150009}
---- !u!114 &114161296900711858
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1658749336858400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf5786fec3f10b45836ca7e5755b7f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114479994585966480
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1487156985891328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf5786fec3f10b45836ca7e5755b7f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114711500422582624
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1966374596123996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf5786fec3f10b45836ca7e5755b7f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114780969535167528
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1212262947016928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf5786fec3f10b45836ca7e5755b7f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114923309602564852
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1960151781883966}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acf5786fec3f10b45836ca7e5755b7f3, type: 3}

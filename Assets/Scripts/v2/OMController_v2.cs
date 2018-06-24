@@ -109,6 +109,8 @@ public class OMController_v2 : MonoBehaviour {
 
 		int score = RecipeManager_v2.instance.GetRecipeScore(recipeIngs, r);
 
+		Debug.Log("Well done! Your " + r.name + " gave you " + score + " points");
+
 		onOMDispatch.Invoke(score);
 	}
 

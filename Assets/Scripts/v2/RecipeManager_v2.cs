@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RecipeManager_v2 : MonoBehaviour {
 
+	// NOTE: the recipe database is created in compilation time right now, included as part of a non-rendered game object in the hierarchy
+	// Anyway, this could have been also loaded in runtime from an XML or something. In this case we could use Resource.Load("Prefabs/prefab_name")
+	// to load the different needed ingredient's prefabs and stuff
+
 	public Transform recipeDatabase;
 
 	private List<Recipe_v2> recipes = new List<Recipe_v2>();
@@ -41,6 +45,6 @@ public class RecipeManager_v2 : MonoBehaviour {
 	{
 		// TODO!
 
-		return 0;
+		return Random.Range(0,100);
 	}
 }
