@@ -50,6 +50,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4369656996120052}
+  - component: {fileID: 114791810897308420}
   m_Layer: 0
   m_Name: Hot Dog Bread
   m_TagString: Untagged
@@ -101,6 +102,7 @@ GameObject:
   - component: {fileID: 33882272423578072}
   - component: {fileID: 136722296984696606}
   - component: {fileID: 23328594729761456}
+  - component: {fileID: 114947604673201366}
   m_Layer: 0
   m_Name: Hot Dog
   m_TagString: Untagged
@@ -159,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644108295389142}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0476, y: 0.005, z: -0.22670001}
+  m_LocalPosition: {x: 0.005, y: 0.005, z: 0.007}
   m_LocalScale: {x: 0.018416101, y: 0.07850885, z: 0.018732559}
   m_Children: []
   m_Father: {fileID: 4421124481338174}
@@ -172,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1356895757352050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0476, y: 0, z: -0.2267}
+  m_LocalPosition: {x: 0.0049999654, y: 0, z: 0.007000014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4578341591754746}
@@ -187,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1315296634373540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4999, y: 0.8946, z: 0.5717}
+  m_LocalPosition: {x: -0.5466, y: 0.8946, z: 0.595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4369656996120052}
@@ -363,6 +365,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4864564, y: 1.2615443, z: 9.629747}
   m_Center: {x: 0.093118005, y: 0.8618179, z: 0.13395058}
+--- !u!114 &114791810897308420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356895757352050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4c7f06d76e14441b591059f16b99ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114947604673201366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1644108295389142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4c7f06d76e14441b591059f16b99ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136722296984696606
 CapsuleCollider:
   m_ObjectHideFlags: 1
