@@ -72,7 +72,6 @@ public class ABController_v2 : MonoBehaviour {
 		Debug.Log("Ingredient removed!");
 
 		currentIngredients.Remove(currentIngredient.name);
-		//currentIngredient.transform.parent = null;
 
 		DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
 	}

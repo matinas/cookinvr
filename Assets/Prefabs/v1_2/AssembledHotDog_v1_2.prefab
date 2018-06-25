@@ -51,7 +51,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4369656996120052}
   - component: {fileID: 114791810897308420}
-  m_Layer: 0
+  - component: {fileID: 65805155478411956}
+  m_Layer: 10
   m_Name: Hot Dog Bread
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +104,7 @@ GameObject:
   - component: {fileID: 136722296984696606}
   - component: {fileID: 23328594729761456}
   - component: {fileID: 114947604673201366}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hot Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644108295389142}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.005, y: 0.005, z: 0.007}
+  m_LocalPosition: {x: 0.002800052, y: 0.005, z: 0.009699971}
   m_LocalScale: {x: 0.018416101, y: 0.07850885, z: 0.018732559}
   m_Children: []
   m_Father: {fileID: 4421124481338174}
@@ -174,7 +175,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1356895757352050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0049999654, y: 0, z: 0.007000014}
+  m_LocalPosition: {x: 0.0028, y: 0, z: 0.0097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4578341591754746}
@@ -189,7 +190,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1315296634373540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5466, y: 0.8946, z: 0.595}
+  m_LocalPosition: {x: -0.5485, y: 0.8946, z: 0.5894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4369656996120052}
@@ -349,10 +350,22 @@ BoxCollider:
   m_GameObject: {fileID: 1427879629094008}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.6824644, y: 1.1200413, z: 9.629747}
   m_Center: {x: -0.04583547, y: 0.78205293, z: 0.13395078}
+--- !u!65 &65805155478411956
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356895757352050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.047725677, y: 0.01915729, z: 0.11947489}
+  m_Center: {x: 0.00026515126, y: -0.018665195, z: 0.0036371946}
 --- !u!65 &65956518368838946
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -361,7 +374,7 @@ BoxCollider:
   m_GameObject: {fileID: 1299642877150588}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.4864564, y: 1.2615443, z: 9.629747}
   m_Center: {x: 0.093118005, y: 0.8618179, z: 0.13395058}
@@ -394,7 +407,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644108295389142}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

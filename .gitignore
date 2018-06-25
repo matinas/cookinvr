@@ -35,3 +35,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/CookInVR_v1_2_Data
+/CookInVR_v2_Data

@@ -6,6 +6,7 @@ public class IngredientPlaceholder_v1_2 : MonoBehaviour {
 
 	public event Action<GameObject> OnPlaceCorrect = (obj) => {};
 	public event Action<GameObject> OnPlaceWrong = (obj) => {};
+	public event Action<GameObject> OnRemoveWrong = (obj) => {};
 
 	private GameObject currIngredient;
 
@@ -30,6 +31,9 @@ public class IngredientPlaceholder_v1_2 : MonoBehaviour {
 		// FIXME: this comparisons for checking equality between placeholder and ingredient itself should
 		// 		  be better implemented by comparing tags instead of game objects names
 
+		Debug.Log("Collided with: " + gameObject.name);
+		Debug.Log("Collider name: " + col.name);
+
 		if (col.gameObject.name == gameObject.name)
 		{
 			Debug.Log("Correct ingredient entered placeholder!");
@@ -47,7 +51,16 @@ public class IngredientPlaceholder_v1_2 : MonoBehaviour {
 		else
 		{
 			Debug.Log("Wrong ingredient entered placeholder!");
-			currIngredient.GetComponent<Interactable>().onDetachedFromHand += HandleWrongIngredientDrop;
+
+			if (currIngredient.GetComponentInParent<Hand>() != null) // Collides and it's attached to a hand, so we wait until it's dropped
+			{
+				currIngredient.GetComponent<Interactable>().onDetachedFromHand += HandleWrongIngredientDrop;
+			}
+			else // Collides and it's not attached to a hand, so it's flying via physics or something...
+			{
+				Debug.Log("Wrong ingredient dropped!");
+				OnPlaceWrong(currIngredient);
+			}
 		}
 	}
 
@@ -55,6 +68,9 @@ public class IngredientPlaceholder_v1_2 : MonoBehaviour {
 	{
 		// FIXME: this comparisons for checking equality between placeholder and ingredient itself should
 		// 		  be better implemented by comparing tags instead of game objects names
+
+		Debug.Log("Collided with: " + gameObject.name);
+		Debug.Log("Collider name: " + col.name);
 
 		if (col.gameObject.name == gameObject.name)
 		{
@@ -65,6 +81,7 @@ public class IngredientPlaceholder_v1_2 : MonoBehaviour {
 		{
 			Debug.Log("Wrong ingredient exited placeholder!");
 			currIngredient.GetComponent<Interactable>().onDetachedFromHand -= HandleWrongIngredientDrop;
+			OnRemoveWrong(currIngredient);
 		}
 	}
 }

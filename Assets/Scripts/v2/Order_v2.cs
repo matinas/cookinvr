@@ -22,7 +22,8 @@ public class Order_v2 : MonoBehaviour {
 		Debug.Log("Order " + num + " arrived. Put your hands to work!");
 
 		recipe = RecipeManager_v2.instance.GetRandomRecipe();
-		Debug.Log("The assigned recipe is: " + recipe.AsString());
+		if (recipe != null)
+			Debug.Log("The assigned recipe is " + recipe.AsString());
 	}
 
 	void OnAttachedToHand(Hand h)

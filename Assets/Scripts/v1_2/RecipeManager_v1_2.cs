@@ -39,6 +39,16 @@ public class RecipeManager_v1_2 : MonoBehaviour {
 		int index = Random.Range(0,recipes.Count);
 
 		return recipes[index];
+
+		// if (recipes.Count > 0)
+		// {
+		// 	Recipe_v1_2 r = recipes[index];
+		// 	recipes.Remove(r);
+
+		// 	return r;
+		// }
+		// else
+		// 	return null;
 	}
 
 	public int GetRecipeScore(List<string> ings, Recipe_v1_2 r)
