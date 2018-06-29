@@ -51,8 +51,14 @@ public class ABController_v2 : MonoBehaviour {
 
 		currentIngredients.Clear();
 
-		for (int c=0; c<currentRecipe.childCount; c++)
-			GameObject.Destroy(currentRecipe.GetChild(c).gameObject);
+		for (int c=currentRecipe.childCount-1; c>=0; c--)
+		{
+			Ingredient_v2 ingredient = currentRecipe.GetChild(c).GetComponent<Ingredient_v2>();
+			if (ingredient != null)
+				ingredient.DispatchRestore();
+			else
+				Debug.Log("The recipe contains a non-ingredient object");
+		}
 
 		DebugIngredients = currentIngredients;
 	}
@@ -61,17 +67,20 @@ public class ABController_v2 : MonoBehaviour {
 	{
 		Debug.Log("Ingredient placed!");
 
-		currentIngredients.Add(currentIngredient.name);
-		currentIngredient.transform.parent = currentRecipe;
-
-		DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
+		if (currentIngredient != null)
+		{
+			currentIngredients.Add(currentIngredient.ingredientName);
+			currentIngredient.transform.parent = currentRecipe;
+	
+			DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
+		}
 	}
 
 	void HandleIngredientRemoved(Hand h)
 	{
 		Debug.Log("Ingredient removed!");
 
-		currentIngredients.Remove(currentIngredient.name);
+		currentIngredients.Remove(currentIngredient.ingredientName);
 
 		DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
 	}

@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114234994877064828}
   - component: {fileID: 114850046444307246}
   - component: {fileID: 65616683580539204}
+  - component: {fileID: 114901145930958018}
   m_Layer: 0
   m_Name: Hot Dog Bread
   m_TagString: Untagged
@@ -105,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1508790071005280}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.0411487, y: 0.86973304, z: -1.1138946}
   m_LocalScale: {x: 1.1442913, y: 1, z: 1.1522658}
   m_Children:
   - {fileID: 4874384003683186}
@@ -382,3 +383,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Hot Dog Bread
+--- !u!114 &114901145930958018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1508790071005280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3367e8606a8d4484c968e20c9fd81db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedMat: {fileID: 2100000, guid: 45b94b14f408e1249b735f47973d472a, type: 2}

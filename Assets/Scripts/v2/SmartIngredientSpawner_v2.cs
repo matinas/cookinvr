@@ -32,8 +32,23 @@ public class SmartIngredientSpawner_v2 : MonoBehaviour {
 		{
 			GameObject ing = GameObject.Instantiate(spawnPrefab,spawnPoint.position,spawnPoint.rotation);
 			ing.SetActive(false);
+			ing.GetComponent<Ingredient_v2>().OnDispatch += Restore;
+			ing.GetComponent<Ingredient_v2>().OnOutOfRange += Restore;
 			unusedIngsPool.Add(ing);
 		}
+	}
+
+	void OnDestroy()
+	{
+		// foreach (GameObject go in unusedIngsPool)
+		// {
+		// 	Ingredient_v2 ing = go.GetComponent<Ingredient_v2>();
+		// 	if (ing != null)
+		// 	{
+		// 		ing.OnDispatch -= Restore;
+		// 		ing.OnOutOfRange -= Restore;
+		// 	}
+		// }
 	}
 
 	void Update()
@@ -55,12 +70,27 @@ public class SmartIngredientSpawner_v2 : MonoBehaviour {
 			GameObject ing = unusedIngsPool[i];
 			ing.SetActive(true);
 			ing.GetComponent<Rigidbody>().AddForce(spawnForce);
-			unusedIngsPool.RemoveAt(i);
 			inUseIngsPool.Add(ing);
 
 			yield return new WaitForSeconds(1.0f/spawnPerSec + Random.Range(0.0f,0.5f));
 		}
 
+		unusedIngsPool.Clear();
 		isSpawning = false;
+	}
+
+	void Restore(Ingredient_v2 ing)
+	{
+		if (inUseIngsPool.Contains(ing.gameObject))
+		{
+			inUseIngsPool.Remove(ing.gameObject);
+			ing.gameObject.SetActive(false);
+			ing.gameObject.transform.parent = null;
+			ing.gameObject.transform.position = spawnPoint.position;
+			ing.gameObject.transform.rotation = spawnPoint.rotation;
+			unusedIngsPool.Add(ing.gameObject);
+		}
+		else
+			Debug.Log("An object restore event arrived for an object that doesn't exist in the spawner's pool of objects...");
 	}
 }
