@@ -101,4 +101,9 @@ public class ABController_v2 : MonoBehaviour {
 			HandleIngredientRemoved(null);
 		}
 	}
+
+	public bool IsEmpty()
+	{
+		return (currentIngredients.Count == 0);
+	}
 }

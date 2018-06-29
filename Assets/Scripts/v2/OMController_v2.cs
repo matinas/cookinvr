@@ -93,7 +93,7 @@ public class OMController_v2 : MonoBehaviour {
 
 	void HandleButtonClick()
 	{
-		if (poweredOn)
+		if (poweredOn && !ABController.IsEmpty())
 		{
 			EvaluateRecipe();
 			ResetMachine();

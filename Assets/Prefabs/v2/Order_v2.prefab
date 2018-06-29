@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114142256168329500}
   - component: {fileID: 114999400040310638}
   - component: {fileID: 114057896764400600}
+  - component: {fileID: 114944680189563118}
   m_Layer: 0
   m_Name: Order_v2
   m_TagString: Order
@@ -149,6 +150,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &114944680189563118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434707762148440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3367e8606a8d4484c968e20c9fd81db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedMat: {fileID: 2100000, guid: 45b94b14f408e1249b735f47973d472a, type: 2}
 --- !u!114 &114999400040310638
 MonoBehaviour:
   m_ObjectHideFlags: 1

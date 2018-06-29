@@ -8,7 +8,7 @@ public class Ingredient_v2 : MonoBehaviour {
 
     public string ingredientName;
 
-    // TODO: add state varialbe to state whether the ingredient is boiled, cooked, fried, chopped, etc
+    // TODO: add state variable to state whether the ingredient is boiled, cooked, fried, chopped, etc
 
 	void Awake()
 	{

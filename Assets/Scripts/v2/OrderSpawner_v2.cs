@@ -8,14 +8,17 @@ public class OrderSpawner_v2 : MonoBehaviour {
 
 	public OMController_v2 OMController;
 
+	public Transform spawnPoint;
+
 	void Awake()
 	{
+		SpawnNewOrder(0);
 		OMController.onOMDispatch += SpawnNewOrder;
 	}
 
 	void SpawnNewOrder(int score)
 	{
-		GameObject.Instantiate(orderPrefab, transform.position + new Vector3(0,1,0), transform.rotation);
+		GameObject.Instantiate(orderPrefab, spawnPoint.position, spawnPoint.rotation);
 	}
 
 }
