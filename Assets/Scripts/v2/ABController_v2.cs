@@ -8,6 +8,10 @@ using Valve.VR.InteractionSystem;
 
 public class ABController_v2 : MonoBehaviour {
 
+	public delegate void OnIngredientPlaced();
+
+	public event OnIngredientPlaced onIngredientPlaced;
+
 	public Transform particlesPrefab;
 	public Transform spawnPoint;
 
@@ -73,6 +77,9 @@ public class ABController_v2 : MonoBehaviour {
 			currentIngredient.transform.parent = currentRecipe;
 	
 			DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
+
+			if (onIngredientPlaced != null)
+				onIngredientPlaced.Invoke();
 		}
 	}
 

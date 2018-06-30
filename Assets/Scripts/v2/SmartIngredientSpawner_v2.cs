@@ -53,7 +53,7 @@ public class SmartIngredientSpawner_v2 : MonoBehaviour {
 
 	void Update()
 	{
-		if ((!isSpawning) && (inUseIngsPool.Count == 0))
+		if ((!isSpawning) && (inUseIngsPool.Count < maxSpawned))
 			StartCoroutine(Spawn());
 	}
 

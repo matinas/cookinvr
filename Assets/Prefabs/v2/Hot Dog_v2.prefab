@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114449065393013290}
   - component: {fileID: 114238724727133612}
   - component: {fileID: 114218075526100060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hot Dog_v2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

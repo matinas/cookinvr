@@ -7,11 +7,13 @@ public class IndicatorController_v2 : MonoBehaviour {
 
 	public GameObject indicatorPrefab;
 
-	public Transform BoxPos, OMPos, AssemblyPos;
+	public Transform BoxPos, OMPos, AssemblyPos, DispatchPos;
+	public string BoxTooltip, OMTooltip, AssemblyTooltip, DispatchTooltip;
 
 	public Transform orderSlot;
+	public Transform ABController;
 
-	private bool orderGrabbed, orderSlotted, ingredientPlaced;
+	private bool grabOrder, slotOrder, placeIngredient, dispatchOrder;
 
 	private GameObject indicator;
 
@@ -28,9 +30,10 @@ public class IndicatorController_v2 : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		orderGrabbed = false;
-		orderSlotted = false;
-		ingredientPlaced = false;
+		grabOrder = false;
+		slotOrder = false;
+		placeIngredient = false;
+		dispatchOrder = false;
 
 		// We consider the future case in which there will be multiple orders to select from...
 		GameObject[] gos = GameObject.FindGameObjectsWithTag("Order");
@@ -50,36 +53,48 @@ public class IndicatorController_v2 : MonoBehaviour {
 		os.onOrderRemoved += Deactivate;
 		OMController_v2 omc = orderSlot.GetComponentInParent<OMController_v2>();
 		omc.onOMDispatch += Deactivate;
+		ABController_v2 abc = ABController.GetComponent<ABController_v2>();
+		abc.onIngredientPlaced += HandleIngredientPlaced;
+
+		AddCarriageReturn(ref BoxTooltip);
+		AddCarriageReturn(ref OMTooltip);
+		AddCarriageReturn(ref AssemblyTooltip);
+		AddCarriageReturn(ref DispatchTooltip);
 	}
 	
 	void HandleOrderReady()
 	{
-		if (!orderGrabbed)
+		if (!grabOrder)
 		{
-			orderGrabbed = true;
-
-			tooltip.text = "GRAB\nORDER!";
-
-			indicator.transform.position = BoxPos.position;
-			indicator.transform.rotation = BoxPos.rotation;
-			indicator.transform.parent = BoxPos.transform;
-
-			indicator.SetActive(true);
+			grabOrder = true;
+			ShowTooltip(BoxPos, BoxTooltip);
 		}
 	}
 
 	void HandleOrderGrabbed()
 	{
-		if (!orderSlotted)
+		if (!slotOrder)
 		{
-			orderSlotted = true;
+			slotOrder = true;
+			ShowTooltip(OMPos, OMTooltip);
+		}
+	}
 
-			indicator.transform.position = OMPos.position;
-			indicator.transform.rotation = OMPos.rotation;
+	void HandleOrderInserted()
+	{
+		if (!placeIngredient)
+		{
+			placeIngredient = true;
+			ShowTooltip(AssemblyPos, AssemblyTooltip);
+		}
+	}
 
-			tooltip.text = "SLOT\nORDER!";
-
-			indicator.SetActive(true);
+	void HandleIngredientPlaced()
+	{
+		if (!dispatchOrder)
+		{
+			dispatchOrder = true;
+			ShowTooltip(DispatchPos, DispatchTooltip);
 		}
 	}
 
@@ -94,21 +109,42 @@ public class IndicatorController_v2 : MonoBehaviour {
 		// After an order is dispatched we can destroy the complete Indication System
 		// FIXME: If more indications are added later this have to be changed!
 
+		GameObject[] gos = GameObject.FindGameObjectsWithTag("Order");
+		foreach(GameObject go in gos)
+		{
+			Order_v2 o = go.GetComponent<Order_v2>();
+			if (o != null)
+			{
+				o.onOrderReady -= HandleOrderReady;
+				o.onOrderGrabbed -= HandleOrderGrabbed;
+				o.onOrderDropped -= Deactivate;
+			}
+		}
+
+		OrderSlot_v2 os = orderSlot.GetComponent<OrderSlot_v2>();
+		os.onOrderInserted -= HandleOrderInserted;
+		os.onOrderRemoved -= Deactivate;
+		OMController_v2 omc = orderSlot.GetComponentInParent<OMController_v2>();
+		omc.onOMDispatch -= Deactivate;
+		ABController_v2 abc = ABController.GetComponent<ABController_v2>();
+		abc.onIngredientPlaced -= HandleIngredientPlaced;
+
 		Destroy(gameObject);
 	}
 
-	void HandleOrderInserted()
+	void ShowTooltip(Transform t, string text)
 	{
-		if (!ingredientPlaced)
-		{
-			ingredientPlaced = true;
+		indicator.transform.position = t.position;
+		indicator.transform.rotation = t.rotation;
+		indicator.transform.parent = t;
 
-			indicator.transform.position = AssemblyPos.position;
-			indicator.transform.rotation = AssemblyPos.rotation;
+		tooltip.text = text;
 
-			tooltip.text = "PLACE\nINGREDIENTS";
+		indicator.SetActive(true);
+	}
 
-			indicator.SetActive(true);
-		}
+	void AddCarriageReturn(ref string s)
+	{
+		s = s.Replace(" ","\n");
 	}
 }

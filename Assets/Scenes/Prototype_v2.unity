@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18119313, g: 0.22678684, b: 0.30733284, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2798,12 +2798,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1195245405}
-  minSpawnForce: {x: -15, y: -3, z: -3}
-  maxSpawnForce: {x: -10, y: 3, z: 3}
+  minSpawnForce: {x: -14, y: -3, z: -3}
+  maxSpawnForce: {x: -12, y: 3, z: 3}
   spawnPrefab: {fileID: 1215030749356346, guid: 97fde8b5be02b2449b26eeb9292df3d4,
     type: 2}
   maxSpawned: 3
-  spawnPerSec: 1
+  spawnPerSec: 2
 --- !u!1 &454311711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3106,7 +3106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a87cb044934d564385fc9630360d829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnTime: 5
+  respawnTime: 3
 --- !u!23 &528108413
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3446,8 +3446,8 @@ MonoBehaviour:
   maxSpawnForce: {x: -10, y: 3, z: 3}
   spawnPrefab: {fileID: 1332908175659276, guid: 1daec5e782477644bb2ffa555a1c284b,
     type: 2}
-  maxSpawned: 2
-  spawnPerSec: 1
+  maxSpawned: 3
+  spawnPerSec: 2
 --- !u!1 &590765570
 GameObject:
   m_ObjectHideFlags: 0
@@ -8873,12 +8873,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1713862148}
-  minSpawnForce: {x: -15, y: -3, z: -3}
-  maxSpawnForce: {x: -10, y: 3, z: 3}
+  minSpawnForce: {x: -14, y: -3, z: -2}
+  maxSpawnForce: {x: -12, y: 3, z: 2}
   spawnPrefab: {fileID: 1922410346739036, guid: 16956e04b36ed8a44b52ba0e92cf43e7,
     type: 2}
-  maxSpawned: 2
-  spawnPerSec: 1
+  maxSpawned: 3
+  spawnPerSec: 2
 --- !u!1 &864832511
 GameObject:
   m_ObjectHideFlags: 0
@@ -14406,8 +14406,8 @@ MonoBehaviour:
   maxSpawnForce: {x: -10, y: 3, z: 3}
   spawnPrefab: {fileID: 1396800058009658, guid: 2e87e2da5cdea8b4da31adf846dba9b1,
     type: 2}
-  maxSpawned: 1
-  spawnPerSec: 1
+  maxSpawned: 3
+  spawnPerSec: 2
 --- !u!1 &1194781773
 GameObject:
   m_ObjectHideFlags: 0
@@ -15565,6 +15565,7 @@ Transform:
   - {fileID: 872792464}
   - {fileID: 418111528}
   - {fileID: 622881197}
+  - {fileID: 1601065217}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15584,7 +15585,13 @@ MonoBehaviour:
   BoxPos: {fileID: 872792464}
   OMPos: {fileID: 418111528}
   AssemblyPos: {fileID: 622881197}
+  DispatchPos: {fileID: 1601065217}
+  BoxTooltip: GRAB ORDER!
+  OMTooltip: SLOT ORDER!
+  AssemblyTooltip: PLACE INGREDIENTS!
+  DispatchTooltip: READY? DISPATCH!
   orderSlot: {fileID: 75249791}
+  ABController: {fileID: 413736022}
 --- !u!1001 &1317916007
 Prefab:
   m_ObjectHideFlags: 0
@@ -17646,6 +17653,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1596771778}
   m_Mesh: {fileID: 4300002, guid: e01ac8592adb6ec40b9b5373e17f54aa, type: 3}
+--- !u!1 &1601065216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1601065217}
+  m_Layer: 0
+  m_Name: Dispatch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1601065217
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1601065216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3419, y: 0.158, z: -0.121}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1303442024}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1601146501
 Prefab:
   m_ObjectHideFlags: 0
@@ -18202,7 +18237,7 @@ MonoBehaviour:
   maxSpawnForce: {x: 15, y: 2, z: 3}
   spawnPrefab: {fileID: 1508790071005280, guid: 336e9bf86c5f9684a8eb2d08ce2c131c,
     type: 2}
-  maxSpawned: 2
+  maxSpawned: 3
   spawnPerSec: 1
 --- !u!1 &1713862147
 GameObject:
@@ -20499,7 +20534,7 @@ MonoBehaviour:
   spawnPrefab: {fileID: 1671596180843636, guid: fd4e8fe76ec521e4ebce4f4b16e0b45e,
     type: 2}
   maxSpawned: 4
-  spawnPerSec: 1
+  spawnPerSec: 2
 --- !u!1 &2085526314
 GameObject:
   m_ObjectHideFlags: 0

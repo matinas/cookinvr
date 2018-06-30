@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114850046444307246}
   - component: {fileID: 65616683580539204}
   - component: {fileID: 114901145930958018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hot Dog Bread
   m_TagString: Untagged
   m_Icon: {fileID: 0}
