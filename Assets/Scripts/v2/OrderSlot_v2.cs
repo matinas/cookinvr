@@ -11,11 +11,6 @@ public class OrderSlot_v2 : MonoBehaviour {
 
 	public Order_v2 order { get; private set; }
 
-	void Start()
-	{
-		isBeingUsed = false;
-	}
-
 	[HideInInspector]
 	public event OnOrderInserted onOrderInserted;
 	[HideInInspector]
@@ -24,9 +19,28 @@ public class OrderSlot_v2 : MonoBehaviour {
 	void Awake()
 	{
 		GetComponentInParent<OMController_v2>().onOMDispatch += RemoveOrder;
+		GetComponent<MeshRenderer>().enabled = false;
+		GetComponentInChildren<ParticleSystem>().enableEmission = false;
+
+		isBeingUsed = false;
 	}
 
-	void HandleOrderDrop()
+	void Start()
+	{
+		// We consider the future case in which there will be multiple orders to select from...
+		GameObject[] gos = GameObject.FindGameObjectsWithTag("Order");
+		foreach(GameObject go in gos)
+		{
+			Order_v2 o = go.GetComponent<Order_v2>();
+			if (o != null)
+			{
+				o.onOrderDropped += HandleOrderDropped;
+				o.onOrderGrabbed += HandleOrderGrabbed;
+			}
+		}
+	}
+
+	void HandleOrderSlotted()
 	{
 		order.transform.position = gameObject.transform.position;
 		order.transform.rotation = gameObject.transform.rotation;
@@ -42,7 +56,7 @@ public class OrderSlot_v2 : MonoBehaviour {
 			if (order != null)
 			{
 				isBeingUsed = true;
-				order.onOrderDropped += HandleOrderDrop;
+				order.onOrderDropped += HandleOrderSlotted;
 			}
 		}
 	}
@@ -55,7 +69,7 @@ public class OrderSlot_v2 : MonoBehaviour {
 			if (tmp_order == order)
 			{
 				isBeingUsed = false;
-				order.onOrderDropped -= HandleOrderDrop;
+				order.onOrderDropped -= HandleOrderSlotted;
 				onOrderRemoved.Invoke();
 				order = null;
 			}
@@ -69,5 +83,17 @@ public class OrderSlot_v2 : MonoBehaviour {
 			GameObject.Destroy(order.gameObject);
 			isBeingUsed = false;
 		}
+	}
+
+	void HandleOrderGrabbed()
+	{
+		GetComponent<MeshRenderer>().enabled = true;
+		GetComponentInChildren<ParticleSystem>().enableEmission = true;
+	}
+
+	void HandleOrderDropped()
+	{
+		GetComponent<MeshRenderer>().enabled = false;
+		GetComponentInChildren<ParticleSystem>().enableEmission = false;
 	}
 }
