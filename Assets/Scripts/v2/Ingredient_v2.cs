@@ -11,12 +11,19 @@ public class Ingredient_v2 : MonoBehaviour {
 
     public string ingredientName;
 
+    public AudioClip grab;
+
+    private AudioSource audioSrc;
+
     // TODO: add state variable to state whether the ingredient is boiled, cooked, fried, chopped, etc
 
 	void Awake()
 	{
         if (ingredientName == null)
             ingredientName = "Unknown";
+
+        audioSrc = GetComponent<AudioSource>();
+		audioSrc.volume = 0.25f;
 	}
 
     public void DispatchRestore()
@@ -24,6 +31,12 @@ public class Ingredient_v2 : MonoBehaviour {
         Debug.Log("Ingredient will be restored after dispatch");
 
         OnDispatch(this);
+    }
+
+    void OnAttachedToHand()
+    {
+        audioSrc.clip = grab;
+        audioSrc.Play();
     }
 
     public void OutOfRangeRestore()

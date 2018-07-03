@@ -8,6 +8,10 @@ public class RecipeManager_v2 : MonoBehaviour {
 	// Anyway, this could have been also loaded in runtime from an XML or something. In this case we could use Resource.Load("Prefabs/prefab_name")
 	// to load the different needed ingredient's prefabs and stuff
 
+	public delegate void OnScoreReady(List<int> pscores);
+
+	public static event OnScoreReady onScoreReady;
+
 	public Transform recipeDatabase;
 
 	private List<Recipe_v2> recipes = new List<Recipe_v2>();
@@ -20,7 +24,7 @@ public class RecipeManager_v2 : MonoBehaviour {
 			instance = this; 
 		else
 			if (instance != this)    // If instance already exists and it's not this...
-				Destroy(gameObject); // Destroy this. This enforces the Singleton pattern (there can only ever be one instance).
+				Destroy(gameObject); // Destroy this. This enforces the Singleton pattern (there can only ever be one instance)
 
 		// Sets this object to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
@@ -39,22 +43,21 @@ public class RecipeManager_v2 : MonoBehaviour {
 		int index = Random.Range(0,recipes.Count);
 
 		return recipes[index];
-
-		// if (recipes.Count > 0)
-		// {
-		// 	Recipe_v2 r = recipes[index];
-		// 	recipes.Remove(r);
-
-		// 	return r;
-		// }
-		// else
-		// 	return null;
 	}
 
-	public int GetRecipeScore(List<string> ings, Recipe_v2 r)
+	public ScoreData GetRecipeScore(List<string> ings, Recipe_v2 r)
 	{
-		// TODO!
+		Debug.Log("[RecipeManager] Hay " + ings.Count + " ingredientes en la recipe");
 
-		return Random.Range(0,100);
+		List<int> scores = new List<int>();
+		foreach (string ing in ings)
+			scores.Add(Random.Range(-10,10));	// Add partial scores
+
+		int finalScore = Random.Range(0,150);
+		Debug.Log("[RecipeManager] El score es " + finalScore);
+
+		ScoreData score = new ScoreData(finalScore,scores);
+
+		return score;
 	}
 }

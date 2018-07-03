@@ -21,11 +21,15 @@ public class ABController_v2 : MonoBehaviour {
 
 	public List<string> DebugIngredients;
 
+	public AudioClip squish;
+
 	private Ingredient_v2 currentIngredient; // The ingredient that is about to be placed (being grabbed) or has just been placed
 
 	[SerializeField]
 	[Tooltip("Reference to the Order Machine Controller")]
 	private OMController_v2 OMController_v2;
+
+	private AudioSource audioSrc;
 
 	void Awake()
 	{
@@ -34,6 +38,9 @@ public class ABController_v2 : MonoBehaviour {
 		OMController_v2.onOMDispatch += DispatchRecipe;
 
 		currentIngredients = new List<string>();
+
+		audioSrc = GetComponent<AudioSource>();
+		audioSrc.volume = 0.25f;
 	}
 
 	void Destroy()
@@ -73,13 +80,16 @@ public class ABController_v2 : MonoBehaviour {
 
 		if (currentIngredient != null)
 		{
+			audioSrc.clip = squish;
+			audioSrc.Play();
+
 			currentIngredients.Add(currentIngredient.ingredientName);
 			currentIngredient.transform.parent = currentRecipe;
 	
 			DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
 
 			if (onIngredientPlaced != null)
-				onIngredientPlaced.Invoke();
+				onIngredientPlaced.Invoke();			
 		}
 	}
 
