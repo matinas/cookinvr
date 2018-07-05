@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198714244505104690}
   - component: {fileID: 199052028835371868}
   m_Layer: 0
-  m_Name: SuccessParticles
+  m_Name: Success Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

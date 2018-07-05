@@ -16,6 +16,12 @@ public class ScoringAudio_v2 : MonoBehaviour {
 		GetComponent<ScoringController_v2>().onScorePointSpawn += PlayScorePoint;
 		GetComponent<ScoringController_v2>().onFinalScoreSpawn += PlayFinalScore;
 	}
+
+	void OnDestroy()
+	{
+		GetComponent<ScoringController_v2>().onScorePointSpawn -= PlayScorePoint;
+		GetComponent<ScoringController_v2>().onFinalScoreSpawn -= PlayFinalScore;
+	}
 	
 	void PlayScorePoint()
 	{

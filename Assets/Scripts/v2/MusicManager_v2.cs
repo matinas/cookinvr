@@ -30,7 +30,7 @@ public class MusicManager_v2 : MonoBehaviour {
 		if (!audioSrc.isPlaying)
 		{
 			audioSrc.clip = SelectRandomTrack();
-			audioSrc.volume = 0.01f;
+			audioSrc.volume = 0.05f;
 			audioSrc.Play();
 		}
 	}

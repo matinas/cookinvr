@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SmartIngredientSpawner_v2 : MonoBehaviour {
 
+	public delegate void OnSpawn();
+
+	public event OnSpawn onSpawn;
+
 	public Transform spawnPoint;
 
 	public Vector3 minSpawnForce;
@@ -19,7 +23,7 @@ public class SmartIngredientSpawner_v2 : MonoBehaviour {
 	private List<GameObject> unusedIngsPool;
 	private List<GameObject> inUseIngsPool;
 
-	private bool isSpawning;
+	private bool isSpawning, isFirstSpawn;
 
 	void Awake()
 	{
@@ -36,6 +40,8 @@ public class SmartIngredientSpawner_v2 : MonoBehaviour {
 			ing.GetComponent<Ingredient_v2>().OnOutOfRange += Restore;
 			unusedIngsPool.Add(ing);
 		}
+
+		isFirstSpawn = true;
 	}
 
 	void OnDestroy()
@@ -72,11 +78,15 @@ public class SmartIngredientSpawner_v2 : MonoBehaviour {
 			ing.GetComponent<Rigidbody>().AddForce(spawnForce);
 			inUseIngsPool.Add(ing);
 
+			if (onSpawn != null && !isFirstSpawn)
+				onSpawn.Invoke();
+
 			yield return new WaitForSeconds(1.0f/spawnPerSec + Random.Range(0.0f,0.5f));
 		}
 
 		unusedIngsPool.Clear();
 		isSpawning = false;
+		isFirstSpawn = false;
 	}
 
 	void Restore(Ingredient_v2 ing)

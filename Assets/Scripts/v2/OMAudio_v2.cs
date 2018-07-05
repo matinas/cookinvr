@@ -39,8 +39,8 @@ public class OMAudio_v2 : MonoBehaviour {
 	{
 		GetComponent<OMController_v2>().onOMPowerOn -= PlayPowerOn;
 		GetComponent<OMController_v2>().onOMPowerOff -= PlayPowerOff;
-		GetComponent<OMController_v2>().onOMDispatch -= PlayDispatch;
 		GetComponent<OMController_v2>().onOMDispatchError -= PlayDispatchError;
+		// GetComponent<OMController_v2>().onOMDispatch -= PlayDispatch;
 	}
 
 	void PlayPowerOn(Recipe_v2 r)

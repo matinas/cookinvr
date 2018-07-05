@@ -33,7 +33,7 @@ public class RecipeManager_v2 : MonoBehaviour {
 		Debug.Log("There are " + childRecipes.Length + " recipes");
 		foreach(Recipe_v2 r in childRecipes)
 		{
-			Debug.Log(r.AsString());
+			Debug.Log(r.ToString());
 			recipes.Add(r);
 		}
 	}
@@ -43,21 +43,5 @@ public class RecipeManager_v2 : MonoBehaviour {
 		int index = Random.Range(0,recipes.Count);
 
 		return recipes[index];
-	}
-
-	public ScoreData GetRecipeScore(List<string> ings, Recipe_v2 r)
-	{
-		Debug.Log("[RecipeManager] Hay " + ings.Count + " ingredientes en la recipe");
-
-		List<int> scores = new List<int>();
-		foreach (string ing in ings)
-			scores.Add(Random.Range(-10,10));	// Add partial scores
-
-		int finalScore = Random.Range(0,150);
-		Debug.Log("[RecipeManager] El score es " + finalScore);
-
-		ScoreData score = new ScoreData(finalScore,scores);
-
-		return score;
 	}
 }

@@ -16,7 +16,7 @@ public class Recipe_v2 : MonoBehaviour {
 			recipeName = "Unknown";
 	}
 
-	public string AsString()
+	public override string ToString()
 	{
 		int count = ingredients.Count;
 		string str = count > 0 ? recipeName + ": " : recipeName;

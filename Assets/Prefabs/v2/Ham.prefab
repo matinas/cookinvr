@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114008572645697618}
   - component: {fileID: 114405711815443584}
   - component: {fileID: 82673913331014384}
+  - component: {fileID: 114287157246962186}
   m_Layer: 8
   m_Name: Ham
   m_TagString: Untagged
@@ -170,7 +171,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -194,7 +195,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &114008572645697618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,7 +208,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Ham
-  grab: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}
 --- !u!114 &114033187006825658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,6 +222,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &114287157246962186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922410346739036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6023228bbc1ba43bc2476895212cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabClip: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}
 --- !u!114 &114360673390212590
 MonoBehaviour:
   m_ObjectHideFlags: 1

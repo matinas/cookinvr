@@ -28,8 +28,6 @@ public class Selectable_v2 : MonoBehaviour {
 
     void OnHandHoverBegin(Hand h)
     {
-        Debug.Log("Hand hover begin!");
-        
         if (gameObject.transform.parent != h.transform)
         {
             for(int i=0; i<renderers.Length; i++)
@@ -42,8 +40,6 @@ public class Selectable_v2 : MonoBehaviour {
 
     void OnHandHoverEnd(Hand h)
     {
-        Debug.Log("Hand hover end!");
-
         for(int i=0; i<renderers.Length; i++)
         {
             MeshRenderer mr = renderers[i];

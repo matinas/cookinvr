@@ -96,8 +96,6 @@ public class OMController_v2 : MonoBehaviour {
 		if (poweredOn && !ABController.IsEmpty())
 		{
 			ScoreData score = EvaluateRecipe();
-			ScoreManager_v2.instance.AddScore(score);
-			
 			onOMDispatch.Invoke(score.finalScore);
 
 			ResetMachine();
@@ -114,9 +112,9 @@ public class OMController_v2 : MonoBehaviour {
 		Debug.Log("Recipe placed ingrs: [" + string.Join( ",", recipeIngs.ToArray()) + "]");
 		Debug.Log("Recipe correct ings [" + string.Join( ",", r.ingredients.ToArray()) + "]");
 
-		ScoreData score = RecipeManager_v2.instance.GetRecipeScore(recipeIngs, r);
+		ScoreData score = ScoreManager_v2.instance.ProcessScore(recipeIngs, r);
 
-		Debug.Log("Well done! Your " + r.name + " gave you " + score + " points");
+		Debug.Log("Well done! Your " + r.name + " gave you " + score.finalScore + " points");
 
 		return score;
 	}

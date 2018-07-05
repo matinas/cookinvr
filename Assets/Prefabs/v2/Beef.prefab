@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114766418267119680}
   - component: {fileID: 114565548066161774}
   - component: {fileID: 82463860794665060}
+  - component: {fileID: 114883569428982872}
   m_Layer: 8
   m_Name: Beef
   m_TagString: Untagged
@@ -280,7 +281,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Beef
-  grab: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}
 --- !u!114 &114782349981574514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,3 +292,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114883569428982872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1396800058009658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6023228bbc1ba43bc2476895212cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabClip: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}

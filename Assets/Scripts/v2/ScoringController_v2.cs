@@ -20,6 +20,9 @@ public class ScoringController_v2 : MonoBehaviour {
 	private GameObject scoreIndicator;
 	private GameObject scorePoint;
 
+	private Animation anim;
+	private TextMeshPro scoreText;
+
 	// Use this for initialization
 	void Awake()
 	{
@@ -28,18 +31,23 @@ public class ScoringController_v2 : MonoBehaviour {
 		scoreIndicator.SetActive(false);
 
 		scorePoint = scoreIndicator.GetComponentInChildren<Animation>().gameObject;
-		Animation anim = scorePoint.GetComponent<Animation>();
+		anim = scorePoint.GetComponent<Animation>();
 
 		anim.AddClip(finalScoreAnim,"FinalScore");
 		anim.AddClip(partialScoreAnim,"PartialScore");
 
+		scoreText = scorePoint.GetComponentInChildren<TextMeshPro>();
+
 		ScoreManager_v2.onNewScoring += ShowScoring;
+	}
+
+	void OnDestroy()
+	{
+		ScoreManager_v2.onNewScoring -= ShowScoring;
 	}
 	
 	void ShowScoring(ScoreData score)
 	{
-		Debug.Log("Score will be shown!"); 
-
 		ResetScorePoint();
 		StartCoroutine(SpawnScores(score));
 	}
@@ -55,18 +63,13 @@ public class ScoringController_v2 : MonoBehaviour {
 	{
 		scoreIndicator.SetActive(true);
 
-		Animation anim = scorePoint.GetComponent<Animation>();
-		TextMeshPro scoreText = scorePoint.GetComponentInChildren<TextMeshPro>();
-
-		Debug.Log("[Scoring Controller] Llegaron " + score.partialScorings.Count + " scores al ScoringController");
-		Debug.Log("[Scoring Controller] El final score que llego es " + score.finalScore);
-
 		// Spawn partial scores
 
+		anim.clip = partialScoreAnim;
 		foreach (int s in score.partialScorings)
 		{
 			scoreText.text = ScoreString(s);
-			anim.clip = partialScoreAnim;
+			anim.Stop();
 			anim.Play("PartialScore");
 
 			if (onScorePointSpawn != null)
@@ -77,10 +80,9 @@ public class ScoringController_v2 : MonoBehaviour {
 
 		// Spawn final score
 
-		Debug.Log("[Scoring Controller] Llegaron " + score.partialScorings.Count + " scores al ScoringController");
-
 		scoreText.text = ScoreString(score.finalScore);
 		anim.clip = finalScoreAnim;
+		anim.Stop();
 		anim.Play("FinalScore");
 
 		if (onFinalScoreSpawn != null)

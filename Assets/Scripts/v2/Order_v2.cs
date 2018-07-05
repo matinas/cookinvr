@@ -30,7 +30,7 @@ public class Order_v2 : MonoBehaviour {
 
 		recipe = RecipeManager_v2.instance.GetRandomRecipe();
 		if (recipe != null)
-			Debug.Log("The assigned recipe is " + recipe.AsString());
+			Debug.Log("The assigned recipe is " + recipe.ToString());
 
 		rb = gameObject.GetComponent<Rigidbody>();
 

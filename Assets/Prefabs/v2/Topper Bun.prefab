@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114010091482987568}
   - component: {fileID: 114498608659216544}
   - component: {fileID: 82966860316384552}
+  - component: {fileID: 114861387823223936}
   m_Layer: 8
   m_Name: Topper Bun
   m_TagString: Untagged
@@ -199,7 +200,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -223,7 +224,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &114010091482987568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,7 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Topper Bun
-  grab: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}
 --- !u!114 &114367508278159046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,6 +263,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedMat: {fileID: 2100000, guid: 45b94b14f408e1249b735f47973d472a, type: 2}
+--- !u!114 &114861387823223936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1894595288872222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6023228bbc1ba43bc2476895212cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabClip: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}
 --- !u!114 &114915265976654470
 MonoBehaviour:
   m_ObjectHideFlags: 1

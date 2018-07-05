@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114825769387118136}
   - component: {fileID: 114728174074532460}
   - component: {fileID: 82957847493304688}
+  - component: {fileID: 114556620522863748}
   m_Layer: 8
   m_Name: Tomatoe
   m_TagString: Untagged
@@ -170,7 +171,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -194,7 +195,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &114015369687758586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +221,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &114556620522863748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215030749356346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6023228bbc1ba43bc2476895212cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabClip: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}
 --- !u!114 &114728174074532460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,7 +257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Tomatoe
-  grab: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}
 --- !u!114 &114902170967848406
 MonoBehaviour:
   m_ObjectHideFlags: 1

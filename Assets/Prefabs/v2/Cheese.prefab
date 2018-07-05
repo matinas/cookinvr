@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114665756316455522}
   - component: {fileID: 114711916239937900}
   - component: {fileID: 82426471178493906}
+  - component: {fileID: 114552594720105208}
   m_Layer: 8
   m_Name: Cheese
   m_TagString: Untagged
@@ -253,6 +254,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   snapAttachEaseInCompleted: 0
+--- !u!114 &114552594720105208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1332908175659276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6023228bbc1ba43bc2476895212cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabClip: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}
 --- !u!114 &114570404227497212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,7 +292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Cheese
-  grab: {fileID: 8300000, guid: ddb97d9c67dcbb54285e7739da29063a, type: 3}
 --- !u!114 &114711916239937900
 MonoBehaviour:
   m_ObjectHideFlags: 1
