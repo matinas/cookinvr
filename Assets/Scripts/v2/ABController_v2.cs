@@ -23,6 +23,8 @@ public class ABController_v2 : MonoBehaviour {
 
 	private Ingredient_v2 currentIngredient; // The ingredient that is about to be placed (being grabbed) or has just been placed
 
+	private GameObject currentTopping;
+
 	[SerializeField]
 	[Tooltip("Reference to the Order Machine Controller")]
 	private OMController_v2 OMController_v2;
@@ -54,6 +56,7 @@ public class ABController_v2 : MonoBehaviour {
 		Destroy(particles.gameObject,2.0f);
 
 		currentIngredients.Clear();
+		DebugIngredients = currentIngredients;
 
 		for (int c=currentRecipe.childCount-1; c>=0; c--)
 		{
@@ -64,18 +67,22 @@ public class ABController_v2 : MonoBehaviour {
 				Debug.Log("The recipe contains a non-ingredient object");
 		}
 
-		DebugIngredients = currentIngredients;
+		if (currentTopping != null)
+		{
+			Destroy(currentTopping);
+		}
 	}
 
 	void HandleIngredientPlaced(Hand h)
 	{
-		// Debug.Log("Ingredient placed!");
-
 		if (currentIngredient != null)
 		{
+			Debug.Log(currentIngredient.ingredientName + " placed! ");
+
 			currentIngredients.Add(currentIngredient.ingredientName);
 			currentIngredient.transform.parent = currentRecipe;
-	
+			//currentIngredient.GetComponent<Rigidbody>().isKinematic = true;
+
 			DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
 
 			if (onIngredientPlaced != null)
@@ -85,23 +92,57 @@ public class ABController_v2 : MonoBehaviour {
 
 	void HandleIngredientRemoved(Hand h)
 	{
-		// Debug.Log("Ingredient removed!");
+		if (currentIngredients.Remove(currentIngredient.ingredientName))
+		{
+			Debug.Log(currentIngredient.ingredientName + " removed! ");
+			DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
+		}
+		else
+			Debug.Log("Couldn't remove " + currentIngredient.ingredientName);
+	}
 
-		currentIngredients.Remove(currentIngredient.ingredientName);
+	void HandleToppingPlaced(Hand h)
+	{
+		if (currentTopping != null)
+		{
+			Destroy(currentTopping.GetComponent<Throwable>());
+			Destroy(currentTopping.GetComponent<VelocityEstimator>());
+			Destroy(currentTopping.GetComponent<Interactable>());
+			Destroy(currentTopping.GetComponent<Rigidbody>());
 
-		DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
+			currentTopping.transform.position = currentIngredient.gameObject.transform.position;
+			currentTopping.transform.parent = currentIngredient.transform;
+		}
 	}
 
 	void OnTriggerEnter(Collider col)
 	{
-		currentIngredient = col.GetComponent<Ingredient_v2>();
+		Ingredient_v2 tmpIngredient = col.GetComponent<Ingredient_v2>();
 
-		if (currentIngredient != null)
+		if (tmpIngredient != null)
 		{
+			currentIngredient = tmpIngredient;
+
 			if (currentIngredient.GetComponentInParent<Hand>() != null) // Collides and it's attached to a hand, so we wait until it's dropped
-				currentIngredient.GetComponent<Interactable>().onDetachedFromHand += HandleIngredientPlaced;
+			{
+				Interactable i = currentIngredient.GetComponent<Interactable>();
+				
+				i.onDetachedFromHand -= HandleIngredientPlaced; // This was added to solve a strange issue that makes OnTriggerEnter execute twice for some ings
+				i.onDetachedFromHand += HandleIngredientPlaced;
+			}
 			else // Collides and it's not attached to a hand, so it's flying via physics or something...
 				HandleIngredientPlaced(null);
+		}
+		else
+		{
+			if (col.gameObject.layer == LayerMask.NameToLayer("Topping"))
+			{
+				Interactable i = col.GetComponent<Interactable>();
+				currentTopping = col.gameObject;
+
+				i.onDetachedFromHand -= HandleToppingPlaced; // This was added to solve a strange issue that makes OnTriggerEnter execute twice for some ings
+				i.onDetachedFromHand += HandleToppingPlaced;
+			}
 		}
 	}
 
@@ -115,6 +156,15 @@ public class ABController_v2 : MonoBehaviour {
 				currentIngredient.GetComponent<Interactable>().onDetachedFromHand -= HandleIngredientPlaced;
 
 			HandleIngredientRemoved(null);
+		}
+		else
+		{
+			if (col.gameObject.layer == LayerMask.NameToLayer("Topping"))
+			{
+				Interactable i = col.GetComponent<Interactable>();
+				i.onDetachedFromHand -= HandleToppingPlaced;
+				currentTopping = null;
+			}
 		}
 	}
 

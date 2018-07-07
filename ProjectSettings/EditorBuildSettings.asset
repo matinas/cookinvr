@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Prototype_v1_2.unity
     guid: eb66282f0ecdb7c48b0fce58433fc44e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype_v2.unity
     guid: 11ca1711641552d41b6bd346d125ed9d
+  - enabled: 1
+    path: Assets/Scenes/Prototype_v2_Chivito.unity
+    guid: 5f98b7e1fcb889140a2b4629284a088b

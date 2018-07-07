@@ -106,7 +106,7 @@ public class OMController_v2 : MonoBehaviour {
 
 	ScoreData EvaluateRecipe()
 	{
-		List<string> recipeIngs = ABController.currentIngredients;
+		List<string> recipeIngs = new List<string>(ABController.currentIngredients);
 		Recipe_v2 r = GetOrderRecipe();
 
 		Debug.Log("Recipe placed ingrs: [" + string.Join( ",", recipeIngs.ToArray()) + "]");

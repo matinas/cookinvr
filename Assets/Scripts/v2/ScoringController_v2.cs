@@ -15,6 +15,8 @@ public class ScoringController_v2 : MonoBehaviour {
 
 	public Transform scoreSpawnPoint;
 
+	public Color scorePointColor, penaltyPointColor;
+
 	public AnimationClip partialScoreAnim, finalScoreAnim;
 
 	private GameObject scoreIndicator;
@@ -68,7 +70,7 @@ public class ScoringController_v2 : MonoBehaviour {
 		anim.clip = partialScoreAnim;
 		foreach (int s in score.partialScorings)
 		{
-			scoreText.text = ScoreString(s);
+			FormatScoreText(scoreText, s);
 			anim.Stop();
 			anim.Play("PartialScore");
 
@@ -80,7 +82,7 @@ public class ScoringController_v2 : MonoBehaviour {
 
 		// Spawn final score
 
-		scoreText.text = ScoreString(score.finalScore);
+		FormatScoreText(scoreText, score.finalScore);
 		anim.clip = finalScoreAnim;
 		anim.Stop();
 		anim.Play("FinalScore");
@@ -93,10 +95,19 @@ public class ScoringController_v2 : MonoBehaviour {
 		scoreIndicator.SetActive(false);
 	}
 
-	string ScoreString(int s)
+	void FormatScoreText(TextMeshPro scoreText, int s)
 	{
-		string scoreStr = s > 0 ? "+" + s.ToString() : "-" + Mathf.Abs(s).ToString();
-
-		return scoreStr;
+		if (s >= 0)
+		{
+			scoreText.text = "+" + s.ToString();
+			scoreText.color = scorePointColor;
+			scoreText.GetComponent<Renderer>().material.SetColor("_GlowColor",scorePointColor);
+		}
+		else
+		{
+			scoreText.text = "-" + Mathf.Abs(s).ToString();
+			scoreText.color = penaltyPointColor;
+			scoreText.GetComponent<Renderer>().material.SetColor("_GlowColor",penaltyPointColor);
+		}
 	}
 }

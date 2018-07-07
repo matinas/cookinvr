@@ -85,9 +85,7 @@ public class ScoreManager_v2 : MonoBehaviour {
 		List<string> recipeIngs = new List<string>(r.ingredients);
 
 		ScoreData score = CalculateScore(ings,recipeIngs);
-		//ScoreData score = new ScoreData(50, new List<int>(new int[] {10,20,30,40,50,60,70,80,90,100}));
-
-		Debug.Log("[SCORE] " + score.ToString());
+		if (score.finalScore < 0) score.finalScore = 0;
 
 		UpdateAndNotify(score);
 

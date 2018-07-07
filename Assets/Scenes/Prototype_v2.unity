@@ -331,7 +331,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 413736022}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &91315126
 GameObject:
@@ -2396,8 +2396,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2100732950}
-  - {fileID: 1477901291}
   - {fileID: 78825784}
+  - {fileID: 1477901291}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15939,7 +15939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1229610169
 Transform:
   m_ObjectHideFlags: 0
@@ -22364,7 +22364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2077867971
 Transform:
   m_ObjectHideFlags: 0
@@ -22734,6 +22734,8 @@ MonoBehaviour:
   scorePointPrefab: {fileID: 1978009416526010, guid: 5bdf5078587a0cb4290175b2cbcc9b9f,
     type: 2}
   scoreSpawnPoint: {fileID: 875032536}
+  scorePointColor: {r: 1, g: 0.972549, b: 0, a: 1}
+  penaltyPointColor: {r: 0.9117647, g: 0.14749132, b: 0.14749132, a: 1}
   partialScoreAnim: {fileID: 7400000, guid: 36aebdbc15cbaa64c8353a9568548532, type: 2}
   finalScoreAnim: {fileID: 7400000, guid: 397cf45bf9b5d444480157cf8a8b2711, type: 2}
 --- !u!82 &2091748522
@@ -23019,7 +23021,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 147ea1c9243b3b1488abb396aa53d655, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 147ea1c9243b3b1488abb396aa53d655, type: 3}
       propertyPath: m_LocalScale.x
