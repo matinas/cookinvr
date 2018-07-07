@@ -1,8 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class OMDisplay_v2 : MonoBehaviour {
+
+	// Both recipeName attributes are just the recipe name using different
+	// fonts libraries (included both just for testing purposes)
+
+	public TextMeshPro recipeName;
+
+	public TextMesh recipeNameAlt;
 
 	[SerializeField]
 	[Tooltip("Reference to the Display game object")]
@@ -31,6 +39,9 @@ public class OMDisplay_v2 : MonoBehaviour {
 
 		Transform disRecipe = GameObject.Instantiate(r.disassembledPrefab,recipePos.position,recipePos.rotation);
 		disRecipe.parent = recipePos;
+		
+		recipeName.text = r.recipeName;
+		recipeNameAlt.text = r.recipeName.ToUpper();
 	}
 
 	void TurnOffDisplay(Recipe_v2 r)

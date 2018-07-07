@@ -20,6 +20,8 @@ public class SmartIngredientSpawner_v2 : MonoBehaviour {
 
 	public int spawnPerSec;
 
+	public Animation spawnAnimation;
+
 	private List<GameObject> unusedIngsPool;
 	private List<GameObject> inUseIngsPool;
 
@@ -80,8 +82,15 @@ public class SmartIngredientSpawner_v2 : MonoBehaviour {
 
 			if (onSpawn != null && !isFirstSpawn)
 				onSpawn.Invoke();
+			
+			float animTime = 0.0f;
+			if (spawnAnimation != null)
+			{
+				spawnAnimation.Play();
+				animTime = spawnAnimation.clip.length;
+			}
 
-			yield return new WaitForSeconds(1.0f/spawnPerSec + Random.Range(0.0f,0.5f));
+			yield return new WaitForSeconds(Mathf.Max(1.0f/spawnPerSec + Random.Range(0.0f,0.5f), animTime));
 		}
 
 		unusedIngsPool.Clear();

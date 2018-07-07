@@ -81,7 +81,7 @@ public class ABController_v2 : MonoBehaviour {
 
 			currentIngredients.Add(currentIngredient.ingredientName);
 			currentIngredient.transform.parent = currentRecipe;
-			//currentIngredient.GetComponent<Rigidbody>().isKinematic = true;
+			currentIngredient.GetComponent<Interactable>().onDetachedFromHand -= HandleIngredientPlaced;
 
 			DebugIngredients = currentIngredients; // FIXME: Just for Debug purposes, remove later!
 

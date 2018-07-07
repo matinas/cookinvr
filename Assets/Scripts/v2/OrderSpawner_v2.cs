@@ -10,6 +10,8 @@ public class OrderSpawner_v2 : MonoBehaviour {
 
 	public Transform spawnPoint;
 
+	public Animation spawnAnim;
+
 	void Awake()
 	{
 		SpawnNewOrder(0);
@@ -19,6 +21,7 @@ public class OrderSpawner_v2 : MonoBehaviour {
 	void SpawnNewOrder(int score)
 	{
 		GameObject.Instantiate(orderPrefab, spawnPoint.position, spawnPoint.rotation);
+		spawnAnim.Play();
 	}
 
 }

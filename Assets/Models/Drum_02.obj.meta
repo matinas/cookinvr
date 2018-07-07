@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 583d9f93bedcd18418b937e75de02691
-timeCreated: 1530173331
+guid: eb512d0508a4ce04ca35ab3198bf3f0c
+timeCreated: 1530947361
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: //RootNode
+    100002: Drum_Circle.002
+    400000: //RootNode
+    400002: Drum_Circle.002
+    2300000: Drum_Circle.002
+    3300000: Drum_Circle.002
+    4300000: Drum_Circle.002
   materials:
     importMaterials: 1
     materialName: 0
@@ -43,7 +43,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
