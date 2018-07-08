@@ -13,6 +13,8 @@ public class Selectable_v2 : MonoBehaviour {
 
     private MeshRenderer[] renderers;
 
+    private Coroutine disableHandCrt;
+
     void Awake()
     {
         originalMats = new List<Material>();
@@ -36,6 +38,8 @@ public class Selectable_v2 : MonoBehaviour {
                 mr.material = selectedMat;
             }
         }
+
+        h.GetComponentInChildren<HandAnimation_v2>().GrabLargePose();
     }
 
     void OnHandHoverEnd(Hand h)
@@ -45,5 +49,38 @@ public class Selectable_v2 : MonoBehaviour {
             MeshRenderer mr = renderers[i];
             mr.material = originalMats[i];
         }
+
+        if (!h.GetStandardInteractionButtonDown())
+            h.GetComponentInChildren<HandAnimation_v2>().NaturalPose();
+    }
+
+    void OnAttachedToHand(Hand h) 
+    {
+        h.GetComponentInChildren<HandAnimation_v2>().GrabSmallPose();
+
+        disableHandCrt = StartCoroutine(DisableHand(h));
+    }
+
+    void OnDetachedFromHand(Hand h)
+    {
+        HandAnimation_v2 handAnim = h.GetComponentInChildren<HandAnimation_v2>();
+        Renderer[] renderers = handAnim.gameObject.GetComponentsInChildren<Renderer>();
+        
+        if (disableHandCrt != null)
+            StopCoroutine(disableHandCrt);
+
+        foreach (Renderer r in renderers)
+            r.enabled = true;
+
+        handAnim.NaturalPose();
+    }
+
+    IEnumerator DisableHand(Hand h)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        HandAnimation_v2 handAnim = h.GetComponentInChildren<HandAnimation_v2>();
+        foreach (Renderer r in handAnim.gameObject.GetComponentsInChildren<Renderer>())
+            r.enabled = false;
     }
 }

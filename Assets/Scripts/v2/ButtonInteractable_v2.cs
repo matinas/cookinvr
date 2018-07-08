@@ -21,11 +21,17 @@ public class ButtonInteractable_v2 : MonoBehaviour {
 	{
 		buttonPressed = false;
 		iButtonPos = transform.position;
+
+		// FIXME: given that the button is saving the initial global position so to know where to return after being pressed,
+		// if the button is part of another moveable object which is moved and then/ the button is pressed, after release the
+		// button will return to its original global position
 	}
 
 	void OnHandHoverBegin(Hand h)
 	{
 		iHandPos = h.transform.position;
+
+		h.GetComponentInChildren<HandAnimation_v2>().FistPose();
 	}
 
 	void HandHoverUpdate(Hand h)
@@ -66,5 +72,7 @@ public class ButtonInteractable_v2 : MonoBehaviour {
 		}
 		else
 			transform.position = iButtonPos; // If the button wasn't fully pressed yet and we lose contact, just reset it
+
+		h.GetComponentInChildren<HandAnimation_v2>().NaturalPose();
 	}
 }

@@ -49,7 +49,7 @@ public class OMController_v2 : MonoBehaviour {
 		poweredOn = false;
 	}
 
-	void Destroy()
+	void OnDestroy()
 	{
 		OrderSlot_v2 OrderSlot_v2 = GetComponentInChildren<OrderSlot_v2>();
 

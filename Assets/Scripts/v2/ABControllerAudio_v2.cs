@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-[RequireComponent(typeof(ABController_v2))]
 public class ABControllerAudio_v2 : MonoBehaviour {
 
 	[SerializeField]
@@ -17,12 +16,15 @@ public class ABControllerAudio_v2 : MonoBehaviour {
 		audioSrc = GetComponent<AudioSource>();
 		audioSrc.volume = 0.25f;
 
-		GetComponent<ABController_v2>().onIngredientPlaced += PlaySquishClip;
+		GetComponentInParent<ABController_v2>().onIngredientPlaced += PlaySquishClip;
 	}
 
 	void OnDestroy()
 	{
-		GetComponent<ABController_v2>().onIngredientPlaced -= PlaySquishClip;
+		ABController_v2 ABController = GetComponentInParent<ABController_v2>();
+		
+		if (ABController != null)
+			ABController.onIngredientPlaced -= PlaySquishClip;
 	}
 
 	void PlaySquishClip()

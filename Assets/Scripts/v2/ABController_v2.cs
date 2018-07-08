@@ -38,11 +38,13 @@ public class ABController_v2 : MonoBehaviour {
 		currentIngredients = new List<string>();
 	}
 
-	void Destroy()
+	void OnDestroy()
 	{
 		OMController_v2.onOMPowerOn -= InitAssembly;
 		OMController_v2.onOMPowerOff -= InitAssembly;
 		OMController_v2.onOMDispatch -= DispatchRecipe;
+
+		Destroy(GetComponent<ABControllerAudio_v2>());
 	}
 
 	void InitAssembly(Recipe_v2 r)
@@ -107,11 +109,12 @@ public class ABController_v2 : MonoBehaviour {
 		{
 			Destroy(currentTopping.GetComponent<Throwable>());
 			Destroy(currentTopping.GetComponent<VelocityEstimator>());
+			Destroy(currentTopping.GetComponent<Selectable_v2>());
 			Destroy(currentTopping.GetComponent<Interactable>());
 			Destroy(currentTopping.GetComponent<Rigidbody>());
 
-			currentTopping.transform.position = currentIngredient.gameObject.transform.position;
-			currentTopping.transform.parent = currentIngredient.transform;
+			currentTopping.transform.position = currentIngredient.transform.position;
+			//currentTopping.transform.parent = currentIngredient.transform;
 		}
 	}
 
@@ -137,11 +140,15 @@ public class ABController_v2 : MonoBehaviour {
 		{
 			if (col.gameObject.layer == LayerMask.NameToLayer("Topping"))
 			{
-				Interactable i = col.GetComponent<Interactable>();
-				currentTopping = col.gameObject;
+				Interactable i = col.gameObject.GetComponent<Interactable>();
 
-				i.onDetachedFromHand -= HandleToppingPlaced; // This was added to solve a strange issue that makes OnTriggerEnter execute twice for some ings
-				i.onDetachedFromHand += HandleToppingPlaced;
+				if (i != null)
+				{
+					currentTopping = col.gameObject;
+
+					i.onDetachedFromHand -= HandleToppingPlaced; // This was added to solve a strange issue that makes OnTriggerEnter execute twice for some ings
+					i.onDetachedFromHand += HandleToppingPlaced;
+				}
 			}
 		}
 	}
@@ -162,8 +169,10 @@ public class ABController_v2 : MonoBehaviour {
 			if (col.gameObject.layer == LayerMask.NameToLayer("Topping"))
 			{
 				Interactable i = col.GetComponent<Interactable>();
-				i.onDetachedFromHand -= HandleToppingPlaced;
-				currentTopping = null;
+				if (i != null)
+					i.onDetachedFromHand -= HandleToppingPlaced;
+
+				currentTopping = null;	
 			}
 		}
 	}
