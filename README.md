@@ -135,7 +135,7 @@ _Click on the images to open videos (will open in the same tab by default)_
 
 **2.0:** Added a new approach to recipe making which is 100% flexible in regards to what can be placed into the assembly dish and how it's placed, so to have a better solution to implement a scoring system based on ingredient's correctness, order, and position upon this. This was the 2nd prototype/approach tested during User Testing
 
-<a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=38s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/3.jpg" alt="2.0" width="240" height="240" border="0"/></a>
+<a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=38s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/0.jpg" alt="2.0" width="240" height="240" border="0"/></a>
 
 **3.0:** Improved a bit the overall environment and added the ingredient spawning system which is ―almost― in place. A lot of UX stuff to improve yet based on User Testing results
 
