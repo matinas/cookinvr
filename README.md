@@ -69,7 +69,7 @@ There won't be any social interaction for now. An interesting addition in a futu
 
 As the players will be using the positional tracking features of the PC VR headset, they shouldn't feel much discomfort. As mentioned earlier, the navigation techniques used will be real walking and (possibly) teleportation, both of which are proven not to be much nausea inducers.
 
-### Prototypes
+## Prototypes
 
 The idea was to include the following in the initial prototypes:
 
@@ -85,7 +85,7 @@ Exclude the following:
 
 I managed to fulfill all the above points, except for a few sound effects I added mainly for debug purposes (i.e.: a debug sound gives some clues of what's happening without the struggle of putting the headset off and checking debug logs on the monitor). Also, as I had some spare time I have also added a very simple environment to start getting sense of how it feels overall.
 
-<img src="https://user-images.githubusercontent.com/5633645/42438140-8a977f2a-8335-11e8-9b2d-d43e709dd05d.png" alt="Prototype" style="max-width:100%" width="512" heigth="512">
+<img src="https://user-images.githubusercontent.com/5633645/42438140-8a977f2a-8335-11e8-9b2d-d43e709dd05d.png" alt="Prototype" style="max-width:100%" width="640" heigth="640">
 
 Despite using the SteamVR Interaction System, I had to implement a few interesting interactions on my own, such as pressing a button, placing an order inside a slot or placing a new ingredient in the assembly line stack, while testing how natural those interactions felt. These are things that can't be learned just with a storyboard as that way you can only visualize the interaction but you can't check how well it match the user expectations. I guess the next tasks on User Testing will result in further improvements in this line. 
 
@@ -119,11 +119,15 @@ _Click on the images to open videos (will open in the same tab by default)_
 
 Version | Description | Video
 --- | --- | ---
-1.0 | First prototype version including some very basic ingredient handling  | <a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="Interaction 6DOF" width="320" height="240" border="10" /></a>
-1.1 | Added a very basic environment to give the prototype a little more context and enhanced a bit the handling of orders | https://www.youtube.com/watch?v=utdpCmk1VuE
-1.2 | Added a new way of making the recipe and handling ingredients by placing them into placeholders that show what's the correct ingredient to be placed next  | https://www.youtube.com/watch?v=kjMlH1FRab0
-
-
+1.0 | First prototype version including some very basic ingredient handling  | <a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="1.0" width="320" height="240" border="10" /></a>
+1.1 | Added a very basic environment to give the prototype a little more context and enhanced a bit the handling of orders | <a target="_blank" href="https://www.youtube.com/watch?v=utdpCmk1VuE"><img src="http://img.youtube.com/vi/utdpCmk1VuE/0.jpg" alt="1.1" width="320" height="240" border="10" /></a>
+1.2 | Added a new way of making the recipe and handling ingredients by placing them into placeholders that show what's the correct ingredient to be placed next | <a target="_blank" href="https://www.youtube.com/watch?v=kjMlH1FRab0"><img src="http://img.youtube.com/vi/kjMlH1FRab0/0.jpg" alt="1.2" width="320" height="240" border="10" /></a>
+1.3 | Added the recipe management system so it's quite easy to add new —stackable— recipes. Added hot dogs and sandwiches. The ingredients should be placed in a predefined order and position so there is no place for errors. This was the 1st prototype/approach tested | <a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=1s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/0.jpg" alt="1.3" width="320" height="240" border="10" /></a>
+2.0 | Added a new approach to recipe making which is 100% flexible in regards to what can be placed into the assembly dish and how it's placed, so to have a better solution to implement a scoring system based on ingredient's correctness, order, and position upon this. This was the 2nd prototype/approach tested during User Testing | <a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=38s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/1.jpg" alt="2.0" width="320" height="240" border="10" /></a>
+3.0 | Improved a bit the overall environment and added the ingredient spawning system which is ―almost― in place. A lot of UX stuff to improve yet based on User Testing results | <a target="_blank" href="https://www.youtube.com/watch?v=WP0IeZvj7qY"><img src="http://img.youtube.com/vi/WP0IeZvj7qY/0.jpg" alt="3.0" width="320" height="240" border="10" /></a>
+3.1 | Ingredient spawning system working properly, improved some textures and materials, added some introductory indicators and tooltips at the beginning based on user testing results, as well as a few general bugs found during testing were solved | <a target="_blank" href="https://www.youtube.com/watch?v=8oP8QsAhxFo"><img src="http://img.youtube.com/vi/8oP8QsAhxFo/0.jpg" alt="3.1" width="320" height="240" border="10" /></a>
+3.2 | Added scoring system, a few more sound effects, enhanced some graphical elements and solved some bugs. Also a new recipe was added, the Uruguayan Chivito! | <a target="_blank" href="https://www.youtube.com/watch?v=SeoVlZpifJ4"><img src="http://img.youtube.com/vi/SeoVlZpifJ4/0.jpg" alt="3.2" width="320" height="240" border="10" /></a>
+4.0 | Enhanced and redesigned environment (mainly cooking allowances) so to make space for more ingredients, improved lighting, added toppings support, added interactable jukebox and spatial sound effects, hands rendering, basic timer functionality and a few additional animations | <a target="_blank" href="https://www.youtube.com/watch?v=nuWQtAUw7ZI"><img src="http://img.youtube.com/vi/nuWQtAUw7ZI/0.jpg" alt="3.2" width="320" height="240" border="10" /></a>
 
 ## How to run it
 
@@ -140,7 +144,7 @@ The project can be run directly from the Editor in case there are no errors with
 3.	Check OpenVR is selected in the Virtual Reality Supported list in the Rendering section of Player Settings (Edit > Project Settings > Other Settings > Rendering).
 4.	Build and Run (File > Build and Run). This will generate the executable file and run it.
 
-## Plan / TODO
+## Plan / TBD
 
 -	~~Get a clear idea of the whole workflow for the game in paper (client arrives, place an order, took the order, check order, select ingredients, make food, etc). This will be the most important point I guess as all that will come later will depend on it.~~
 -	~~Share the idea with friends so to gather some opinions and early feedback on the abstract idea. Further improve the idea based on this feedback.~~
@@ -176,7 +180,7 @@ The project can be run directly from the Editor in case there are no errors with
 -	Implement rounds based on enhanced timer functionality so as soon as you receive the new order it starts ticking and you have an appropriate time for each recipe, show final scoreboard when time runs out, etc.
 -	Analyze a strange bug that makes that only in the HMD rendering some ingredients are shown duplicated and with an incorrect perspective (mainly for the cheese and ham as part of the sandwich). In the desktop screen they are shown just fine...
 
-## Extra Features
+## Extra Features TBD
 
 -	Add more complex manipulation of ingredients, not just placing them together to make the receipt. For example, cutting, boiling, etc.
 -	Add chores or other activities beyond cooking (washing dishes, defend against robberies, etc).
