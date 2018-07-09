@@ -113,13 +113,13 @@ Check the *User Testing* section of the PDF in the root folder. The idea was to 
 
 _Click on the images to open videos (will open in the same tab by default)_
 
-**1.0:** First prototype version including some very basic ingredient handling
+> **1.0:** First prototype version including some very basic ingredient handling
 
-> <a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="1.0" width="240" height="240"/></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="1.0" width="240" height="240"/></a>
 
-**1.1:** Added a very basic environment to give the prototype a little more context and enhanced a bit the handling of orders
+> **1.1:** Added a very basic environment to give the prototype a little more context and enhanced a bit the handling of orders
 
-> <a target="_blank" href="https://www.youtube.com/watch?v=utdpCmk1VuE"><img src="http://img.youtube.com/vi/utdpCmk1VuE/0.jpg" alt="1.1" width="240" height="240" border="0" /></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=utdpCmk1VuE"><img src="http://img.youtube.com/vi/utdpCmk1VuE/0.jpg" alt="1.1" width="240" height="240" border="0" /></a>
 
 > **1.2:** Added a new way of making the recipe and handling ingredients by placing them into placeholders that show what's the correct ingredient to be placed next
 
@@ -133,19 +133,19 @@ _Click on the images to open videos (will open in the same tab by default)_
 
 <a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=38s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/0.jpg" alt="2.0" width="240" height="240" border="0"/></a>
 
-**3.0:** Improved a bit the overall environment and added the ingredient spawning system which is ―almost― in place. A lot of UX stuff to improve yet based on User Testing results
+> **3.0:** Improved a bit the overall environment and added the ingredient spawning system which is ―almost― in place. A lot of UX stuff to improve yet based on User Testing results
 
 <a target="_blank" href="https://www.youtube.com/watch?v=WP0IeZvj7qY"><img src="http://img.youtube.com/vi/WP0IeZvj7qY/0.jpg" alt="3.0" width="240" height="240" border="0" /></a>
 
-**3.1:** Ingredient spawning system working properly, improved some textures and materials, added some introductory indicators and tooltips at the beginning based on user testing results, as well as a few general bugs found during testing were solved
+> **3.1:** Ingredient spawning system working properly, improved some textures and materials, added some introductory indicators and tooltips at the beginning based on user testing results, as well as a few general bugs found during testing were solved
 
 <a target="_blank" href="https://www.youtube.com/watch?v=8oP8QsAhxFo"><img src="http://img.youtube.com/vi/8oP8QsAhxFo/0.jpg" alt="3.1" width="240" height="240" border="0" /></a>
 
-**3.2:** Added scoring system, a few more sound effects, enhanced some graphical elements and solved some bugs. Also a new recipe was added, the Uruguayan Chivito!
+> **3.2:** Added scoring system, a few more sound effects, enhanced some graphical elements and solved some bugs. Also a new recipe was added, the Uruguayan Chivito!
 
 <a target="_blank" href="https://www.youtube.com/watch?v=SeoVlZpifJ4"><img src="http://img.youtube.com/vi/SeoVlZpifJ4/0.jpg" alt="3.2" width="240" height="240" border="0" /></a>
 
-**4.0:** Enhanced and redesigned environment (mainly cooking allowances) so to make space for more ingredients, improved lighting, added toppings support, added interactable jukebox and spatial sound effects, hands rendering, basic timer functionality and a few additional animations
+> **4.0:** Enhanced and redesigned environment (mainly cooking allowances) so to make space for more ingredients, improved lighting, added toppings support, added interactable jukebox and spatial sound effects, hands rendering, basic timer functionality and a few additional animations
 
 <a target="_blank" href="https://www.youtube.com/watch?v=nuWQtAUw7ZI"><img src="http://img.youtube.com/vi/nuWQtAUw7ZI/0.jpg" alt="3.2" width="240" height="240" border="0" /></a>
 
