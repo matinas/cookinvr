@@ -89,19 +89,15 @@ I managed to fulfill all the above points, except for a few sound effects I adde
 
 Despite using the SteamVR Interaction System, I had to implement a few interesting interactions on my own, such as pressing a button, placing an order inside a slot or placing a new ingredient in the assembly line stack, while testing how natural those interactions felt. These are things that can't be learned just with a storyboard as that way you can only visualize the interaction but you can't check how well it match the user expectations. I guess the next tasks on User Testing will result in further improvements in this line. 
 
-Check the following videos to get a little idea of how this initial prototypes evolved and how this short workflow implemented as part of the prototype works (grab order, place it in order machine, visualize order, make recipe, dispatch it when ready)::
+Check the following videos to get a little idea of how this initial prototypes evolved and how this short workflow implemented as part of the prototype works (grab order, place it in order machine, visualize order, make recipe, dispatch it when ready):
+
+_Click on the image to open video (will open in the same tab by default)_
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="Interaction 6DOF" width="320" height="240" border="10" /></a>
 
-_Click on the image to open video (will open in the same tab by default)_
-
 <a target="_blank" href="https://www.youtube.com/watch?v=utdpCmk1VuE"><img src="http://img.youtube.com/vi/utdpCmk1VuE/0.jpg" alt="Interaction 6DOF" width="320" height="240" border="10" /></a>
 
-_Click on the image to open video (will open in the same tab by default)_
-
 <a target="_blank" href="https://www.youtube.com/watch?v=kjMlH1FRab0"><img src="http://img.youtube.com/vi/kjMlH1FRab0/0.jpg" alt="Interaction 6DOF" width="320" height="240" border="10" /></a>
-
-_Click on the image to open video (will open in the same tab by default)_
 
 Check the *Demo section* on the CookinVR PDF document at the root folder for more videos on the game's evolution.
 
@@ -119,21 +115,21 @@ _Click on the images to open videos (will open in the same tab by default)_
 
 **1.0:** First prototype version including some very basic ingredient handling
 
-<a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="1.0" width="240" height="240"/></a>
+> <a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="1.0" width="240" height="240"/></a>
 
 **1.1:** Added a very basic environment to give the prototype a little more context and enhanced a bit the handling of orders
 
-<a target="_blank" href="https://www.youtube.com/watch?v=utdpCmk1VuE"><img src="http://img.youtube.com/vi/utdpCmk1VuE/0.jpg" alt="1.1" width="240" height="240" border="0" /></a>
+> <a target="_blank" href="https://www.youtube.com/watch?v=utdpCmk1VuE"><img src="http://img.youtube.com/vi/utdpCmk1VuE/0.jpg" alt="1.1" width="240" height="240" border="0" /></a>
 
-**1.2:** Added a new way of making the recipe and handling ingredients by placing them into placeholders that show what's the correct ingredient to be placed next
+> **1.2:** Added a new way of making the recipe and handling ingredients by placing them into placeholders that show what's the correct ingredient to be placed next
 
 <a target="_blank" href="https://www.youtube.com/watch?v=kjMlH1FRab0"><img src="http://img.youtube.com/vi/kjMlH1FRab0/0.jpg" alt="1.2" width="240" height="240" border="0" /></a>
 
-**1.3:** Added the recipe management system so it's quite easy to add new —stackable— recipes. Added hot dogs and sandwiches. The ingredients should be placed in a predefined order and position so there is no place for errors. This was the 1st prototype/approach tested
+> **1.3:** Added the recipe management system so it's quite easy to add new —stackable— recipes. Added hot dogs and sandwiches. The ingredients should be placed in a predefined order and position so there is no place for errors. This was the 1st prototype/approach tested
 
 <a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=1s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/0.jpg" alt="1.3" width="240" height="240" border="0" /></a>
 
-**2.0:** Added a new approach to recipe making which is 100% flexible in regards to what can be placed into the assembly dish and how it's placed, so to have a better solution to implement a scoring system based on ingredient's correctness, order, and position upon this. This was the 2nd prototype/approach tested during User Testing
+> **2.0:** Added a new approach to recipe making which is 100% flexible in regards to what can be placed into the assembly dish and how it's placed, so to have a better solution to implement a scoring system based on ingredient's correctness, order, and position upon this. This was the 2nd prototype/approach tested during User Testing
 
 <a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=38s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/0.jpg" alt="2.0" width="240" height="240" border="0"/></a>
 
