@@ -21,7 +21,7 @@ The **actual status of the game is shown in the video below**. Check the *Demo s
 
 <a target="_blank" href="https://www.youtube.com/watch?v=nuWQtAUw7ZI"><img src="http://img.youtube.com/vi/nuWQtAUw7ZI/0.jpg" alt="Last version" width="640" height="480" border="10" /></a>
 
-> The sections that follows in this README roughly describe some of the studies and decisions made during the development of the game, > as well as the carried out prototyping, user testing, etc. For a more thoroughly description of each section **refer to the PDF document at the root folder**.
+> The sections that follows in this README roughly describe some of the studies and decisions made during the development of the game, as well as the carried out prototyping, user testing, etc. For a more thoroughly description of each section **refer to the PDF document at the root folder**.
 
 ## State of the Art
 
@@ -117,17 +117,41 @@ Check the *User Testing* section of the PDF in the root folder. The idea was to 
 
 _Click on the images to open videos (will open in the same tab by default)_
 
-Version | Description | Video
---- | --- | ---
-1.0 | First prototype version including some very basic ingredient handling  | <a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="1.0" width="320" height="240" border="10" /></a>
-1.1 | Added a very basic environment to give the prototype a little more context and enhanced a bit the handling of orders | <a target="_blank" href="https://www.youtube.com/watch?v=utdpCmk1VuE"><img src="http://img.youtube.com/vi/utdpCmk1VuE/0.jpg" alt="1.1" width="320" height="240" border="10" /></a>
-1.2 | Added a new way of making the recipe and handling ingredients by placing them into placeholders that show what's the correct ingredient to be placed next | <a target="_blank" href="https://www.youtube.com/watch?v=kjMlH1FRab0"><img src="http://img.youtube.com/vi/kjMlH1FRab0/0.jpg" alt="1.2" width="320" height="240" border="10" /></a>
-1.3 | Added the recipe management system so it's quite easy to add new —stackable— recipes. Added hot dogs and sandwiches. The ingredients should be placed in a predefined order and position so there is no place for errors. This was the 1st prototype/approach tested | <a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=1s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/0.jpg" alt="1.3" width="320" height="240" border="10" /></a>
-2.0 | Added a new approach to recipe making which is 100% flexible in regards to what can be placed into the assembly dish and how it's placed, so to have a better solution to implement a scoring system based on ingredient's correctness, order, and position upon this. This was the 2nd prototype/approach tested during User Testing | <a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=38s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/1.jpg" alt="2.0" width="320" height="240" border="10" /></a>
-3.0 | Improved a bit the overall environment and added the ingredient spawning system which is ―almost― in place. A lot of UX stuff to improve yet based on User Testing results | <a target="_blank" href="https://www.youtube.com/watch?v=WP0IeZvj7qY"><img src="http://img.youtube.com/vi/WP0IeZvj7qY/0.jpg" alt="3.0" width="320" height="240" border="10" /></a>
-3.1 | Ingredient spawning system working properly, improved some textures and materials, added some introductory indicators and tooltips at the beginning based on user testing results, as well as a few general bugs found during testing were solved | <a target="_blank" href="https://www.youtube.com/watch?v=8oP8QsAhxFo"><img src="http://img.youtube.com/vi/8oP8QsAhxFo/0.jpg" alt="3.1" width="320" height="240" border="10" /></a>
-3.2 | Added scoring system, a few more sound effects, enhanced some graphical elements and solved some bugs. Also a new recipe was added, the Uruguayan Chivito! | <a target="_blank" href="https://www.youtube.com/watch?v=SeoVlZpifJ4"><img src="http://img.youtube.com/vi/SeoVlZpifJ4/0.jpg" alt="3.2" width="320" height="240" border="10" /></a>
-4.0 | Enhanced and redesigned environment (mainly cooking allowances) so to make space for more ingredients, improved lighting, added toppings support, added interactable jukebox and spatial sound effects, hands rendering, basic timer functionality and a few additional animations | <a target="_blank" href="https://www.youtube.com/watch?v=nuWQtAUw7ZI"><img src="http://img.youtube.com/vi/nuWQtAUw7ZI/0.jpg" alt="3.2" width="320" height="240" border="10" /></a>
+**1.0:** First prototype version including some very basic ingredient handling
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="1.0" width="240" height="240"/></a>
+
+**1.1:** Added a very basic environment to give the prototype a little more context and enhanced a bit the handling of orders
+
+<a target="_blank" href="https://www.youtube.com/watch?v=utdpCmk1VuE"><img src="http://img.youtube.com/vi/utdpCmk1VuE/0.jpg" alt="1.1" width="240" height="240" border="0" /></a>
+
+**1.2:** Added a new way of making the recipe and handling ingredients by placing them into placeholders that show what's the correct ingredient to be placed next
+
+<a target="_blank" href="https://www.youtube.com/watch?v=kjMlH1FRab0"><img src="http://img.youtube.com/vi/kjMlH1FRab0/0.jpg" alt="1.2" width="240" height="240" border="0" /></a>
+
+**1.3:** Added the recipe management system so it's quite easy to add new —stackable— recipes. Added hot dogs and sandwiches. The ingredients should be placed in a predefined order and position so there is no place for errors. This was the 1st prototype/approach tested
+
+<a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=1s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/0.jpg" alt="1.3" width="240" height="240" border="0" /></a>
+
+**2.0:** Added a new approach to recipe making which is 100% flexible in regards to what can be placed into the assembly dish and how it's placed, so to have a better solution to implement a scoring system based on ingredient's correctness, order, and position upon this. This was the 2nd prototype/approach tested during User Testing
+
+<a target="_blank" href="https://youtu.be/QfiW2JZQF24?t=38s"><img src="http://img.youtube.com/vi/QfiW2JZQF24/3.jpg" alt="2.0" width="240" height="240" border="0"/></a>
+
+**3.0:** Improved a bit the overall environment and added the ingredient spawning system which is ―almost― in place. A lot of UX stuff to improve yet based on User Testing results
+
+<a target="_blank" href="https://www.youtube.com/watch?v=WP0IeZvj7qY"><img src="http://img.youtube.com/vi/WP0IeZvj7qY/0.jpg" alt="3.0" width="240" height="240" border="0" /></a>
+
+**3.1:** Ingredient spawning system working properly, improved some textures and materials, added some introductory indicators and tooltips at the beginning based on user testing results, as well as a few general bugs found during testing were solved
+
+<a target="_blank" href="https://www.youtube.com/watch?v=8oP8QsAhxFo"><img src="http://img.youtube.com/vi/8oP8QsAhxFo/0.jpg" alt="3.1" width="240" height="240" border="0" /></a>
+
+**3.2:** Added scoring system, a few more sound effects, enhanced some graphical elements and solved some bugs. Also a new recipe was added, the Uruguayan Chivito!
+
+<a target="_blank" href="https://www.youtube.com/watch?v=SeoVlZpifJ4"><img src="http://img.youtube.com/vi/SeoVlZpifJ4/0.jpg" alt="3.2" width="240" height="240" border="0" /></a>
+
+**4.0:** Enhanced and redesigned environment (mainly cooking allowances) so to make space for more ingredients, improved lighting, added toppings support, added interactable jukebox and spatial sound effects, hands rendering, basic timer functionality and a few additional animations
+
+<a target="_blank" href="https://www.youtube.com/watch?v=nuWQtAUw7ZI"><img src="http://img.youtube.com/vi/nuWQtAUw7ZI/0.jpg" alt="3.2" width="240" height="240" border="0" /></a>
 
 ## How to run it
 
