@@ -21,6 +21,8 @@ The **actual status of the game is shown in the video below**. Check the *Demo s
 
 <a target="_blank" href="https://www.youtube.com/watch?v=nuWQtAUw7ZI"><img src="http://img.youtube.com/vi/nuWQtAUw7ZI/0.jpg" alt="Last version" width="640" height="480" border="10" /></a>
 
+_Click on the image to open video (will open in the same tab by default, so CTRL+click is recommended)_
+
 > The sections that follows in this README roughly describe some of the studies and decisions made during the development of the game, as well as the carried out prototyping, user testing, etc. For a more thoroughly description of each section **refer to the PDF document at the root folder**.
 
 ## State of the Art
@@ -91,7 +93,7 @@ Despite using the SteamVR Interaction System, I had to implement a few interesti
 
 Check the following videos to get a little idea of how this initial prototypes evolved and how this short workflow implemented as part of the prototype works (grab order, place it in order machine, visualize order, make recipe, dispatch it when ready):
 
-_Click on the image to open video (will open in the same tab by default)_
+_Click on the image to open video (will open in the same tab by default, so CTRL+click is recommended)_
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V5V5sP47X5c"><img src="http://img.youtube.com/vi/V5V5sP47X5c/0.jpg" alt="Interaction 6DOF" width="320" height="240" border="10" /></a>
 
@@ -111,7 +113,7 @@ Check the *User Testing* section of the PDF in the root folder. The idea was to 
 
 ## Demos
 
-_Click on the images to open videos (will open in the same tab by default)_
+_Click on the image to open video (will open in the same tab by default, so CTRL+click is recommended)_
 
 > **1.0:** First prototype version including some very basic ingredient handling
 
@@ -164,7 +166,7 @@ The project can be run directly from the Editor in case there are no errors with
 3.	Check OpenVR is selected in the Virtual Reality Supported list in the Rendering section of Player Settings (Edit > Project Settings > Other Settings > Rendering).
 4.	Build and Run (File > Build and Run). This will generate the executable file and run it.
 
-## Plan / TBD
+## TBD
 
 -	~~Get a clear idea of the whole workflow for the game in paper (client arrives, place an order, took the order, check order, select ingredients, make food, etc). This will be the most important point I guess as all that will come later will depend on it.~~
 -	~~Share the idea with friends so to gather some opinions and early feedback on the abstract idea. Further improve the idea based on this feedback.~~
