@@ -1,6 +1,6 @@
 # cookinvr
 
-## Overview
+## Game Concept
 
 The game is a little cooking game inspired in the VR game [Job Simulator](https://store.steampowered.com/app/448280/Job_Simulator/) and the 2D game [Cook, Serve, Delicious](https://store.steampowered.com/app/247020/Cook_Serve_Delicious/). It's thought to be played in high-end VR headsets like the Vive, Rift or Windows Mixed Reality, but if it comes up well maybe it can be ported to mobile VR headsets or even standalone as I would like to experiment with Oculus Go. The game is suitable for casual gamers and more generally for anyone that wants to spend a good time interacting with different objects in VR in order to make and serve some food. The idea arose basically due to the fact that I would like to experiment a bit more on VR interaction, grabbing things, manipulating objects, etc. so I think a cooking game is a good way to cover all this points.
 
@@ -9,9 +9,9 @@ Roughly speaking, the game puts the player inside a kitchen where he will have t
 After initial reflections on the idea I decided to stick to the minimum viable mechanic to keep things simple at first; so no clients or other NPCs, no complex animations, etc. I'll enhance the gameplay workflow as I iterate over it later. So, the basic gameplay workflow I would like to get working for a first version is the following:
 
 1. Next order magically appears in the Order Box (represented as a kind of cartridge or something similar; idea inspired on Job Simulator and First Touch VR games).
-2. Grab the order and place it in something we will call the Order Machine which will make the receipt for the order to be shown on a kind of 3D screen in front of the user workstation.
+2. Grab the order and place it in something we will call the Order Machine which will make the recipe for the order to be shown on a kind of 3D screen in front of the user workstation.
 3. Pick the ingredients from the shelves on the sides or the Fridge Box.
-4. Place the ingredients one by one on the little Assembly Board that's above the main allowance according to the receipt.
+4. Place the ingredients one by one on the little Assembly Board that's above the main allowance according to the recipe.
 5. Once the order is ready to go, touch the Dispatch Order Button located on the Order Machine.
 6. Grab the next order and continue playing.
 
@@ -185,7 +185,7 @@ The project can be run directly from the Editor in case there are no errors with
 -	~~Enhance the scoring system. Avoid making below zero scores, and show penalties in red instead of the usual yellow color~~
 -	~~Solve bug related to ingredient placement in the assembly. There are some ingredients that ends up repeated for some reason and this mess up the scoring~~
 -	~~Add Uruguayan Chivito recipe and add Uruguayan flag so you can place it as a topping.~~
--	~~Replace the placeholder primitives with real models. The models will be done inside VR using Google Blocks, so one task will be modeling all the needed assets/ingredients, at least for a few simple receipts (e.g.: hamburger, sandwich and hot dog). Or eventually downloading them from Google Poly so to maintain the low poly graphical style. Put the assets into the game and check if all works fine with those~~
+-	~~Replace the placeholder primitives with real models. The models will be done inside VR using Google Blocks, so one task will be modeling all the needed assets/ingredients, at least for a few simple recipes (e.g.: hamburger, sandwich and hot dog). Or eventually downloading them from Google Poly so to maintain the low poly graphical style. Put the assets into the game and check if all works fine with those~~
 -	~~Redesign the environment so more ingredients can be accessible, adding kind of shelves below each allowance.~~
 -	~~Add recipe name in the display for each recipe.~~
 -	~~Solve a bug that makes that when you make some juggling with the ingredients, if there was an ingredient already placed, once you catch the ingredient with which you are juggling, the game incorrectly takes it as placed in the assembly.~~
@@ -204,7 +204,7 @@ The project can be run directly from the Editor in case there are no errors with
 
 ## Extra Features TBD
 
--	Add more complex manipulation of ingredients, not just placing them together to make the receipt. For example, cutting, boiling, etc.
+-	Add more complex manipulation of ingredients, not just placing them together to make the recipe. For example, cutting, boiling, etc.
 -	Add chores or other activities beyond cooking (washing dishes, defend against robberies, etc).
 -	Add a cool menu and some diegetic interfaces. For example, the menu could be attached to the users hand, watch or something.
 -	Add basic NPC clients walking around the saloon, maybe coming to place an order from time to time, waiting for it to be ready, etc.
